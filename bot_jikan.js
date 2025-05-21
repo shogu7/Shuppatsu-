@@ -29,7 +29,7 @@ async function getMangasForDate(date) {
   }
 }
 
-function createMangaEmbed(mangas, date) {
+function createMangaEmbeds(mangas, date) {
   const dateObj = new Date(date);
   const formattedDate = dateObj.toLocaleDateString('fr-FR', {
     day: 'numeric',
@@ -37,32 +37,35 @@ function createMangaEmbed(mangas, date) {
     year: 'numeric',
   });
 
-  const embed = new EmbedBuilder()
-    .setColor('#FF6B6B')
-    .setTitle(`📚 Sorties Manga du ${formattedDate}`)
-    .setTimestamp();
-
   if (mangas.length === 0) {
-    embed.setDescription("Aucun manga trouvé pour cette date.");
-  } else {
-    if (mangas[0].images?.jpg?.image_url) {
-      embed.setThumbnail(mangas[0].images.jpg.image_url);
-    }
+    const noResultEmbed = new EmbedBuilder()
+      .setColor('#FF6B6B')
+      .setTitle(`📚 Sorties Manga du ${formattedDate}`)
+      .setDescription("Aucun manga trouvé pour cette date.")
+      .setImage('https://c.tenor.com/ifGz550Sh_4AAAAd/tenor.gif') // ou https://c.tenor.com/iJB_gT1EG_cAAAAd/tenor.gif
+      .setTimestamp();
 
-    mangas.forEach((manga, index) => {
-      const title = manga.title.length > 25 ? manga.title.substring(0, 25) + '...' : manga.title;
-      embed.addFields({
-        name: `${index + 1}. ${title}`,
-        value: `[Voir](${manga.url})`,
-        inline: true,
-      });
-    });
-
-    embed.setFooter({ text: `${mangas.length} manga(s) trouvé(s)` });
+    return [noResultEmbed];
   }
+    // for each manga create a embeds with image, name, ect..
+    const embeds = [];
+    mangas.forEach((manga, index) => {
+    const title = manga.title.length > 40 ? manga.title.substring(0, 40) + '…' : manga.title;
 
-  return embed;
+    const embed = new EmbedBuilder()
+      .setColor('#fe6800')
+      .setTitle(`${index + 1}. ${title}`)
+      .setURL(manga.url)
+      .setImage(manga.images?.jpg?.image_url || null)
+      .setFooter({ text: `📅 Sortie du ${formattedDate}` })
+      .setTimestamp();
+
+  embeds.push(embed);
+  });
+
+  return embeds;
 }
+
 
 function createNavigationButtons(date) {
   return new ActionRowBuilder().addComponents(
@@ -73,7 +76,7 @@ function createNavigationButtons(date) {
     new ButtonBuilder()
       .setCustomId('exit')
       .setLabel('❌')
-      .setStyle(ButtonStyle.Danger),
+      .setStyle(ButtonStyle.Secondary),
     new ButtonBuilder()
       .setCustomId(`next_${date}`)
       .setLabel('▶️')
@@ -134,10 +137,11 @@ client.on('interactionCreate', async (interaction) => {
 
     await interaction.deferUpdate();
     const mangas = await getMangasForDate(todayStr);
-    const embed = createMangaEmbed(mangas, todayStr);
+    const embed = createMangaEmbeds(mangas, todayStr);
     const row = createNavigationButtons(todayStr);
-
-    await interaction.editReply({ embeds: [embed], components: [row] });
+    // embeds creation
+    const embeds = createMangaEmbeds(mangas, todayStr);
+    await interaction.editReply({ embeds, components: [row] });
     return;
   }
 
@@ -155,10 +159,9 @@ client.on('interactionCreate', async (interaction) => {
 
     await interaction.deferUpdate();
     const mangas = await getMangasForDate(newDateStr);
-    const embed = createMangaEmbed(mangas, newDateStr);
+    const embeds = createMangaEmbeds(mangas, newDateStr);
     const row = createNavigationButtons(newDateStr);
-
-    await interaction.editReply({ embeds: [embed], components: [row] });
+    await interaction.editReply({ embeds, components: [row] });
   }
 });
 
