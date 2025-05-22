@@ -1,6 +1,5 @@
 .env
 node_modules
-bot_jikanV2.0.js
 manga_releases.json
 manga_releases_april_2025.json
 logs/
@@ -14,9 +13,6 @@ build/
 .idea/
 .DS_Store
 package-lock.json
-events/
-components/
-utils/
 configs/
-index.js
-config.js
+dataM-2025-5.json
+jikan_v3/
