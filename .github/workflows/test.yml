@@ -2,9 +2,11 @@ name: Run Vitest Tests
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   test:
@@ -15,12 +17,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Run all tests with Vitest
-        run: npx vitest run --threads=2 --reporter=dot
+      - name: Run Vitest Tests
+        run: npx vitest run --reporter=dot
