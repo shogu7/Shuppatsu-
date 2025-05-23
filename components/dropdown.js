@@ -1,6 +1,13 @@
 const { ActionRowBuilder, StringSelectMenuBuilder } = require('discord.js');
 const mangasCountByDate = require('../utils/mangasCountByDate');
 
+function formatDateToYYYYMMDD(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
 function createDateSelectMenu(date, mangasCountByDate = {}) {
   const dateObj = new Date(date);
   const dates = [];
@@ -9,12 +16,13 @@ function createDateSelectMenu(date, mangasCountByDate = {}) {
     const currDate = new Date(dateObj);
     currDate.setDate(currDate.getDate() + i);
 
-    const dateStr = currDate.toISOString().split('T')[0];
+    const dateStr = formatDateToYYYYMMDD(currDate);
     const formattedDate = currDate.toLocaleDateString('fr-FR', {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
     });
+
     const count = mangasCountByDate[dateStr] || 0;
     const label = count > 0
       ? `${formattedDate} - ${count} Sortie${count > 1 ? 's' : ''} de Manga`
@@ -22,7 +30,7 @@ function createDateSelectMenu(date, mangasCountByDate = {}) {
 
     dates.push({
       value: dateStr,
-      label: label,
+      label,
       default: i === 0,
     });
   }
@@ -36,6 +44,3 @@ function createDateSelectMenu(date, mangasCountByDate = {}) {
 }
 
 module.exports = { createDateSelectMenu };
-
-
-// TODO : Fix Date on dropdown do not display how much release for each day ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! 
