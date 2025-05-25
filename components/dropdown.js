@@ -1,8 +1,5 @@
 const { ActionRowBuilder, StringSelectMenuBuilder } = require('discord.js');
 
-/**
- * Format a JS date object to 'YYYY-MM-DD'
- */
 function formatDateToYYYYMMDD(date) {
   const y = date.getFullYear();
   const m = String(date.getMonth() + 1).padStart(2, '0');
@@ -11,9 +8,8 @@ function formatDateToYYYYMMDD(date) {
 }
 
 /**
- * Builds a dropdown for 11 days centered on 'centerDateStr', using counts for each day.
- * @param {string} centerDateStr - Center date in 'YYYY-MM-DD'
- * @param {object} counts - Object mapping 'YYYY-MM-DD' to number of releases
+ * @param {string} centerDateStr 
+ * @param {object} counts 
  * @returns {ActionRowBuilder}
  */
 function createDateSelectMenu(centerDateStr, counts = {}) {

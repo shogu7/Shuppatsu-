@@ -2,8 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * Retourne les mangas sortis entre centerDate -5 jours et +5 jours
- * @param {string} centerDate - format 'YYYY-MM-DD'
+ * @param {string} centerDate
  * @returns {Promise<Array>}
  */
 async function getMangaCounts(centerDate) {
