@@ -25,7 +25,7 @@ describe('getMangasForDate - mocké sans toucher aux fichiers réels', () => {
     vi.useFakeTimers();
     vi.setSystemTime(mockDate);
 
-    const dataPath = path.join(__dirname, '..', 'scripts', 'data', 'dataM-2025-5.json');
+    const dataPath = path.join(__dirname, '..', 'manga', 'scripts', 'data', 'dataM-2025-5.json');
 
     vi.spyOn(fs, 'existsSync').mockImplementation((p) => p === dataPath);
 
