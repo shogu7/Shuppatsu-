@@ -1,9 +1,10 @@
 const { EmbedBuilder } = require('discord.js');
 const { getMangasForDate } = require('../aniListAPI');
-const { countMangasByDate } = require('../utils/mangaUtils');
+const { getReleaseCountsForWindow } = require('../utils/mangaUtils');
 const { createDateSelectMenu } = require('../components/dropdown');
 const { createMangaEmbeds } = require('../components/mangaEmbeds');
-const { createNavigationButtons } = require('../components/buttons'); // Will change asap, blouce circulaire idiiooot
+const { createNavigationButtons } = require('../components/buttons');
+const { getMangaCounts } = require('../utils/getMangaCounts');
 const { GIF_EXIT } = require('../config');
 
 async function handleInteraction(interaction) {
@@ -26,9 +27,9 @@ async function handleInteraction(interaction) {
 
     await interaction.deferUpdate();
     const mangas = await getMangasForDate(todayStr);
-    // console.log(mangas);
+    const mangaInRange = await getMangaCounts(todayStr);
 
-    const countByDate = countMangasByDate(mangas);
+    const countByDate = getReleaseCountsForWindow(mangaInRange, todayStr);
     const dateMenu = createDateSelectMenu(todayStr, countByDate);
     const embeds = createMangaEmbeds(mangas, todayStr);
     const navRow = createNavigationButtons(todayStr, 0, mangas.length);
@@ -43,7 +44,9 @@ async function handleInteraction(interaction) {
 
     await interaction.deferUpdate();
     const mangas = await getMangasForDate(selectedDate);
-    const countByDate = countMangasByDate(mangas);
+    const mangaInRange = await getMangaCounts(selectedDate);
+
+    const countByDate = getReleaseCountsForWindow(mangaInRange, selectedDate);
     const dateMenu = createDateSelectMenu(selectedDate, countByDate);
     const embeds = createMangaEmbeds(mangas, selectedDate);
     const navRow = createNavigationButtons(selectedDate, 0, mangas.length);
@@ -58,6 +61,7 @@ async function handleInteraction(interaction) {
     if (action === 'nextManga' || action === 'prevManga') {
       let currentIndex = parseInt(indexStr, 10);
       const mangas = await getMangasForDate(date);
+      const mangaInRange = await getMangaCounts(date);
       const totalMangas = mangas.length;
 
       if (action === 'nextManga' && currentIndex < totalMangas - 1) {
@@ -66,10 +70,10 @@ async function handleInteraction(interaction) {
         currentIndex--;
       }
 
-      const embeds = createMangaEmbeds(mangas, date);
-      const countByDate = countMangasByDate(mangas);
+      const countByDate = getReleaseCountsForWindow(mangaInRange, date);
       const navRow = createNavigationButtons(date, currentIndex, totalMangas);
       const dateMenu = createDateSelectMenu(date, countByDate);
+      const embeds = createMangaEmbeds(mangas, date);
       const displayEmbed = embeds.length > 0 ? [embeds[currentIndex]] : embeds;
 
       await interaction.update({ embeds: displayEmbed, components: [dateMenu, navRow] });

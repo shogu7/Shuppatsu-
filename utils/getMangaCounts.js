@@ -2,14 +2,15 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * @param {string} centerDate
+ * Retourne les mangas sortis entre centerDate -5 jours et +5 jours
+ * @param {string} centerDate - format 'YYYY-MM-DD'
  * @returns {Promise<Array>}
  */
-async function getMangasForDate(centerDate) {
+async function getMangaCounts(centerDate) {
   try {
-    const [year, month, day] = centerDate.split('-').map(Number);
+    const [year, month] = centerDate.split('-').map(Number);
 
-    const dataPath = path.join(__dirname, 'scripts', 'manga', 'data', `dataM-${year}-${String(month)}.json`);
+    const dataPath = path.join(__dirname, '..', 'scripts', 'manga', 'data', `dataM-${year}-${month}.json`);
 
     if (!fs.existsSync(dataPath)) {
       console.warn(`Fichier JSON introuvable : ${dataPath}`);
@@ -21,15 +22,15 @@ async function getMangasForDate(centerDate) {
 
     const center = new Date(centerDate);
     const startRange = new Date(center);
-    startRange.setDate(center.getDate() - 5);
+    startRange.setDate(center.getDate() - 6);
     const endRange = new Date(center);
     endRange.setDate(center.getDate() + 5);
 
     const filteredMangas = allMangas.filter(manga => {
       const sd = manga.startDate || {};
       if (sd.year && sd.month && sd.day) {
-        const mangaDateStr = `${sd.year}-${String(sd.month).padStart(2, '0')}-${String(sd.day).padStart(2, '0')}`;
-        return mangaDateStr === centerDate;
+        const mangaDate = new Date(sd.year, sd.month - 1, sd.day);
+        return mangaDate >= startRange && mangaDate <= endRange;
       }
       return false;
     });
@@ -41,4 +42,4 @@ async function getMangasForDate(centerDate) {
   }
 }
 
-module.exports = { getMangasForDate };
+module.exports = { getMangaCounts };

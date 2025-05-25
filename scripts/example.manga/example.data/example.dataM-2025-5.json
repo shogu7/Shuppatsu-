@@ -1,0 +1,97 @@
+[ 
+  {
+    "id": 192685,
+    "countryOfOrigin": "JP",
+    "format": "MANGA",
+    "title": {
+      "romaji": "Toaru Shimai to Uzou Muzou",
+      "english": null,
+      "native": "とある姉妹と有象無象"
+    },
+    "startDate": {
+      "year": 2025,
+      "month": 5,
+      "day": 2
+    },
+    "coverImage": {
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/small/bx192685-Nwb1RzJv8Ion.png"
+    },
+    "siteUrl": "https://anilist.co/manga/192685"
+  },
+  {
+    "id": 193382,
+    "countryOfOrigin": "JP",
+    "format": "MANGA",
+    "title": {
+      "romaji": "Kurasu de 2-banme ni Kawaii Boyish Osananajimi wo, Ninpaku Sanka no Shuugakuryokou de Netotte Tanezuke Sex Tsuke ni Suru Hanashi",
+      "english": null,
+      "native": "クラスで２番目に可愛いボーイッシュ幼馴染を、二泊三日の修学旅行で寝取って種付けセックス漬けにする話"
+    },
+    "startDate": {
+      "year": 2025,
+      "month": 5,
+      "day": 23
+    },
+    "coverImage": {
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/small/bx193382-yVZ7d9vfWhRp.png"
+    },
+    "siteUrl": "https://anilist.co/manga/193382"
+  },
+  {
+    "id": 192541,
+    "countryOfOrigin": "JP",
+    "format": "MANGA",
+    "title": {
+      "romaji": "Inshoku-Ou Demar the comic",
+      "english": null,
+      "native": "淫触王デマール the comic"
+    },
+    "startDate": {
+      "year": 2025,
+      "month": 5,
+      "day": 12
+    },
+    "coverImage": {
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/small/bx192541-hBEjCoAfMa7i.png"
+    },
+    "siteUrl": "https://anilist.co/manga/192541"
+  },
+  {
+    "id": 193091,
+    "countryOfOrigin": "JP",
+    "format": "MANGA",
+    "title": {
+      "romaji": "Hiyori-chan no Nichijou",
+      "english": null,
+      "native": "ひよりちゃんの日常"
+    },
+    "startDate": {
+      "year": 2025,
+      "month": 5,
+      "day": 8
+    },
+    "coverImage": {
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/small/bx193091-9wWIMWpKDkuz.jpg"
+    },
+    "siteUrl": "https://anilist.co/manga/193091"
+  },
+  {
+    "id": 192966,
+    "countryOfOrigin": "JP",
+    "format": "MANGA",
+    "title": {
+      "romaji": "Henkyou Keibi Zenshi: Gen no Iryuujio",
+      "english": null,
+      "native": "辺境警備 前史〜銀のイリュージオ〜"
+    },
+    "startDate": {
+      "year": 2025,
+      "month": 5,
+      "day": 7
+    },
+    "coverImage": {
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/small/bx192966-Ubw0RlQ1NeZW.jpg"
+    },
+    "siteUrl": "https://anilist.co/manga/192966"
+  }
+]

@@ -1,6 +1,8 @@
 const { ActionRowBuilder, StringSelectMenuBuilder } = require('discord.js');
-const mangasCountByDate = require('../utils/mangasCountByDate');
 
+/**
+ * Format a JS date object to 'YYYY-MM-DD'
+ */
 function formatDateToYYYYMMDD(date) {
   const y = date.getFullYear();
   const m = String(date.getMonth() + 1).padStart(2, '0');
@@ -8,29 +10,36 @@ function formatDateToYYYYMMDD(date) {
   return `${y}-${m}-${d}`;
 }
 
-function createDateSelectMenu(date, mangasCountByDate = {}) {
-  const dateObj = new Date(date);
-  const dates = [];
-
+/**
+ * Builds a dropdown for 11 days centered on 'centerDateStr', using counts for each day.
+ * @param {string} centerDateStr - Center date in 'YYYY-MM-DD'
+ * @param {object} counts - Object mapping 'YYYY-MM-DD' to number of releases
+ * @returns {ActionRowBuilder}
+ */
+function createDateSelectMenu(centerDateStr, counts = {}) {
+  const centerDate = new Date(centerDateStr);
+  const options = [];
+console.log(counts);
   for (let i = -5; i <= 5; i++) {
-    const currDate = new Date(dateObj);
-    currDate.setDate(currDate.getDate() + i);
+    const dateObj = new Date(centerDate);
+    dateObj.setDate(centerDate.getDate() + i);
 
-    const dateStr = formatDateToYYYYMMDD(currDate);
-    const formattedDate = currDate.toLocaleDateString('fr-FR', {
+    const dateStr = formatDateToYYYYMMDD(dateObj);
+    const count = counts[dateStr] || 0;
+    const formattedDate = dateObj.toLocaleDateString('fr-FR', {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
     });
 
-    const count = mangasCountByDate[dateStr] || 0;
-    const label = count > 0
-      ? `${formattedDate} - ${count} Sortie${count > 1 ? 's' : ''} de Manga`
-      : `${formattedDate} - Aucune sortie`;
+    const label =
+      count > 0
+        ? `${formattedDate} - ${count} Sortie${count > 1 ? 's' : ''} de Manga`
+        : `${formattedDate} - Aucune sortie`;
 
-    dates.push({
-      value: dateStr,
+    options.push({
       label,
+      value: dateStr,
       default: i === 0,
     });
   }
@@ -39,7 +48,7 @@ function createDateSelectMenu(date, mangasCountByDate = {}) {
     new StringSelectMenuBuilder()
       .setCustomId('date_select')
       .setPlaceholder('Sélectionner une date')
-      .addOptions(dates)
+      .addOptions(options)
   );
 }
 
