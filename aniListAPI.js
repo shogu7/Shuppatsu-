@@ -5,14 +5,32 @@ const path = require('path');
  * @param {string} centerDate
  * @returns {Promise<Array>}
  */
-async function getMangasForDate(centerDate) {
+async function getForDate(centerDate, type) {
   try {
-    const [year, month, day] = centerDate.split('-').map(Number);
-
-    const dataPath = path.join(__dirname, 'scripts', 'manga', 'data', `dataM-${year}-${String(month)}.json`);
+    const [year, month] = centerDate.split('-').map(Number);
+    let dataType;
+    switch (type) {
+      case 'anime_release':
+      case 'anime':
+        dataType = 'anime';
+        break;
+      case 'manwha_release':
+      case 'manwha':
+        dataType = 'manwha';
+        break;
+      case 'manga_release':
+      case 'manga':
+        dataType = 'manga';
+        break;
+      default:
+        console.warn(`getCounts: type inconnu « ${type} », renvoi null`);
+        return null;
+    }
+    const dataPath = path.join(__dirname, 'scripts', dataType, 'data', `dataM-${year}-${month}.json`);
+    // console.log('From aniListAPI.js -->', dataPath);
 
     if (!fs.existsSync(dataPath)) {
-      console.warn(`Fichier JSON introuvable : ${dataPath}`);
+      console.warn(`proutFichier JSON introuvable : ${dataPath}`);
       return [];
     }
 
@@ -41,4 +59,4 @@ async function getMangasForDate(centerDate) {
   }
 }
 
-module.exports = { getMangasForDate };
+module.exports = { getForDate };

@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits } = require('discord.js');
-const { handleInteraction } = require('./events/interactionHandler');
+const handleInteraction = require('./events/handler/buttons/InteractionButton');
 const { handleMessageCreate } = require('./events/messageHandler');
 
 require('dotenv').config(); // for token proc

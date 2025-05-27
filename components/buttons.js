@@ -1,24 +1,24 @@
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
-function createNavigationButtons(date, currentIndex = 0, totalMangas = 0) {
+function createNavigationButtons(date, type, currentIndex = 0, totalMangas = 0) {
   const exitButton = new ButtonBuilder()
     .setCustomId('exit')
     .setLabel('❌')
     .setStyle(ButtonStyle.Secondary);
 
-  const nextMangaButton = new ButtonBuilder()
-    .setCustomId(`nextManga_${date}_${currentIndex}`)
+  const nextButton = new ButtonBuilder()
+    .setCustomId(`next_${type}_${date}_${currentIndex}`)
     .setLabel('▶️')
     .setStyle(ButtonStyle.Primary)
     .setDisabled(currentIndex >= totalMangas - 1);
 
-  const prevMangaButton = new ButtonBuilder()
-    .setCustomId(`prevManga_${date}_${currentIndex}`)
+  const prevButton = new ButtonBuilder()
+    .setCustomId(`prev_${type}_${date}_${currentIndex}`)
     .setLabel('◀️')
     .setStyle(ButtonStyle.Primary)
     .setDisabled(currentIndex <= 0);
 
-  return new ActionRowBuilder().addComponents(prevMangaButton, exitButton, nextMangaButton);
+  return new ActionRowBuilder().addComponents(prevButton, exitButton, nextButton);
 }
 
 function createInitialButtons() {
@@ -26,6 +26,10 @@ function createInitialButtons() {
     new ButtonBuilder()
       .setCustomId('manga_release')
       .setLabel('Manga Release')
+      .setStyle(ButtonStyle.Success),
+    new ButtonBuilder()
+      .setCustomId('anime_release')
+      .setLabel('Anime Release')
       .setStyle(ButtonStyle.Success),
     new ButtonBuilder()
       .setCustomId('exit')

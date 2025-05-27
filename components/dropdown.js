@@ -12,10 +12,11 @@ function formatDateToYYYYMMDD(date) {
  * @param {object} counts 
  * @returns {ActionRowBuilder}
  */
-function createDateSelectMenu(centerDateStr, counts = {}) {
+function createDateSelectMenu(centerDateStr, counts = {}, type) {
   const centerDate = new Date(centerDateStr);
   const options = [];
-console.log(counts);
+console.log('From createDateSelectMenu -->', type, centerDateStr);
+// console.log(counts);
   for (let i = -5; i <= 5; i++) {
     const dateObj = new Date(centerDate);
     dateObj.setDate(centerDate.getDate() + i);
@@ -42,7 +43,7 @@ console.log(counts);
 
   return new ActionRowBuilder().addComponents(
     new StringSelectMenuBuilder()
-      .setCustomId('date_select')
+      .setCustomId(`date_select_${type}`)
       .setPlaceholder('Sélectionner une date')
       .addOptions(options)
   );

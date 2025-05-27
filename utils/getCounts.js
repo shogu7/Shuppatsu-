@@ -5,11 +5,28 @@ const path = require('path');
  * @param {string} centerDate
  * @returns {Promise<Array>}
  */
-async function getMangaCounts(centerDate) {
+async function getCounts(centerDate, type) {
   try {
     const [year, month] = centerDate.split('-').map(Number);
-
-    const dataPath = path.join(__dirname, '..', 'scripts', 'manga', 'data', `dataM-${year}-${month}.json`);
+    let dataType;
+    switch (type) {
+      case 'anime_release':
+      case 'anime':
+        dataType = 'anime';
+        break;
+      case 'manwha_release':
+      case 'manwha':
+        dataType = 'manwha';
+        break;
+      case 'manga_release':
+      case 'manga':
+        dataType = 'manga';
+        break;
+      default:
+        console.warn(`getCounts: type inconnu « ${type} », renvoi null`);
+        return null;
+    }
+    const dataPath = path.join(__dirname, '..', 'scripts', dataType, 'data', `dataM-${year}-${month}.json`);
 
     if (!fs.existsSync(dataPath)) {
       console.warn(`Fichier JSON introuvable : ${dataPath}`);
@@ -41,4 +58,4 @@ async function getMangaCounts(centerDate) {
   }
 }
 
-module.exports = { getMangaCounts };
+module.exports = { getCounts };
