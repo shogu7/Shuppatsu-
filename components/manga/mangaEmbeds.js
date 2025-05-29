@@ -23,10 +23,12 @@ function createMangaEmbeds(mangas, date) {
   return mangas.map((manga, index) => {
     const rawTitle = manga.title?.english || manga.title?.romaji || manga.title?.native || "Titre inconnu";
     const title = rawTitle.length > 40 ? rawTitle.substring(0, 40) + '…' : rawTitle;
+    const chapter = manga.chapter;
 
     return new EmbedBuilder()
       .setColor('#fe6800')
       .setTitle(`${index + 1}. ${title}`)
+      .setDescription(`**Chapitre :** ${chapter}`)
       .setURL(manga.siteUrl)
       .setImage(manga.coverImage?.medium || null)
       .setFooter({ text: `📅 Sortie du ${formattedDate}` })

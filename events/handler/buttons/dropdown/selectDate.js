@@ -2,7 +2,9 @@ const { getForDate } = require('../../../../aniListAPI');
 const { getCounts } = require('../../../../utils/getCounts');
 const { getReleaseCountsForWindow } = require('../../../../utils/mangaUtils');
 const { createDateSelectMenu } = require('../../../../components/dropdown');
-const { createMangaEmbeds, createAnimeEmbeds, createManwhaEmbeds } = require('../../../../components/manga/mangaEmbeds');
+const { createMangaEmbeds } = require('../../../../components/manga/mangaEmbeds');
+const { createAnimeEmbeds } = require('../../../../components/anime/animeEmbeds');
+// const { reateManwhaEmbeds } = require('../../../../components/manwha/manwhaEmbeds'); for later
 const { createNavigationButtons } = require('../../../../components/buttons');
 const { errorEmbeds } = require('../../../../components/basicEmbeds/errorEmbeds');
 

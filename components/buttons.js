@@ -18,7 +18,12 @@ function createNavigationButtons(date, type, currentIndex = 0, totalMangas = 0) 
     .setStyle(ButtonStyle.Primary)
     .setDisabled(currentIndex <= 0);
 
-  return new ActionRowBuilder().addComponents(prevButton, exitButton, nextButton);
+  const backButton = new ButtonBuilder()
+  .setCustomId(`back`)
+  .setLabel('🔙')
+  .setStyle(ButtonStyle.Secondary)
+
+  return new ActionRowBuilder().addComponents(prevButton, exitButton, nextButton, backButton);
 }
 
 function createInitialButtons() {

@@ -2,18 +2,15 @@ const { getForDate } = require('../../../aniListAPI');
 const { getCounts } = require('../../../utils/getCounts');
 const { getReleaseCountsForWindow } = require('../../../utils/mangaUtils');
 const { createDateSelectMenu } = require('../../../components/dropdown');
-const { createMangaEmbeds, createAnimeEmbeds } = require('../../../components/manga/mangaEmbeds');
+const { createMangaEmbeds } = require('../../../components/manga/mangaEmbeds');
+const { createAnimeEmbeds } = require('../../../components/anime/animeEmbeds');
 const { createNavigationButtons } = require('../../../components/buttons');
 const { errorEmbeds } = require('../../../components/basicEmbeds/errorEmbeds');
 
-const typeToEmbed = {
-  manga: createMangaEmbeds,
-  anime: createAnimeEmbeds,
-};
-
 module.exports = async function showRelease(interaction, dateStr, type) {
+    // console.log('type avant getforDate', type);
     const data = await getForDate(dateStr, type);
-    console.log('from showRelease.js -->', data, '/', dateStr, '/', type);
+    // console.log('from showRelease.js -->', data, '/', dateStr, '/', type);
     const counts = await getCounts(dateStr, type);
     if (data === null || counts === null) {
         return interaction.editReply({ embeds: errorEmbeds('Type invalide') });

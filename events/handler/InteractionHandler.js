@@ -1,7 +1,9 @@
-const showRelease = require('../shared/showRelease');
-const { createExitEmbeds } = require('../../../components/basicEmbeds/exitEmbed');
-const { handleNextPage, handlePrevPage } = require('../buttons/navigation');
-const handleSelectDate  = require('./dropdown/selectDate');
+const showRelease = require('./shared/showRelease');
+const { createExitEmbeds } = require('../../components/basicEmbeds/exitEmbed');
+const { handleNextPage, handlePrevPage } = require('./buttons/navigation/navigation');
+const handleSelectDate  = require('./buttons/dropdown/selectDate');
+const { homeInteger } = require('./buttons/home/home');
+const { exitInteger } = require('./buttons/home/exit');
 
 async function handleInteraction(interaction) {
 console.log('---------------------------------------------------------->');
@@ -18,15 +20,13 @@ console.log('---------------------------------------------------------->');
 
   // EXIT LOGIC CALL
   if (customId === 'exit') {
-    const embeds = createExitEmbeds();
-    await interaction.update({ embeds: embeds, components: [] });
-    return;
+    return await exitInteger(interaction);
   }
 
   // DATE_SELECT LOGIC CALL
   if (interaction.isStringSelectMenu() && customId.startsWith('date_select_')) {
     type = customId.substring('date_select_'.length); 
-    // console.log('From interactionButtons.js (interaction print) -->', interaction);
+    // console.log('From AFTER ALL interactionButtons.js (type print) -->', type);
     return await handleSelectDate(interaction, type);
   }
 
@@ -35,12 +35,18 @@ console.log('---------------------------------------------------------->');
     const [action, type, date, indexStr] = customId.split('_');
 
     if (action === 'prev' || action === 'next') {
-      const fullType = type + '_release'; // ou juste type si déjà complet
-      console.log('before sending to handleNextPage here is the type:', fullType);
+      console.log('type on button before constfulltype', type);
+      const fullType = type + '_release';
+      console.log('l.40 : fullType on button after constfulltype', fullType);
       return action === 'next'
         ? await handleNextPage(interaction, fullType)
         : await handlePrevPage(interaction, fullType);
     }
+  }
+
+  if (customId === 'back') {
+    type = null;
+    return await homeInteger(interaction);
   }
 
   // Type logic

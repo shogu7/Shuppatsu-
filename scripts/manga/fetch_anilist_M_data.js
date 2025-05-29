@@ -4,8 +4,13 @@ const { enqueueRequest } = require('../../utils/ratelimiter');
 const path = require('path');
 
 const currentDate = new Date();
-const currentYear = currentDate.getFullYear();
-const currentMonth = currentDate.getMonth() + 1;
+let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth() + 1; // +1 each month
+if (currentMonth > 12) {
+  currentMonth = 1;
+  currentYear++;
+}
+
 
 const startDateStr = `${currentYear}-${String(currentMonth).padStart(2, '0')}-01`;
 
@@ -34,7 +39,7 @@ const query = `
         startDate_lesser: $startDateLesser
       ) {
         id
-        countryOfOrigin                  # contry of
+        countryOfOrigin
         format
         title {
           romaji

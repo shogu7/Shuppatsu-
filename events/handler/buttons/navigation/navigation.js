@@ -1,9 +1,10 @@
-const { getForDate } = require('../../../aniListAPI');
-const { getCounts } = require('../../../utils/getCounts');
-const { getReleaseCountsForWindow } = require('../../../utils/mangaUtils');
-const { createDateSelectMenu } = require('../../../components/dropdown');
-const { createMangaEmbeds } = require('../../../components/manga/mangaEmbeds');
-const { createNavigationButtons } = require('../../../components/buttons');
+const { getForDate } = require('../../../../aniListAPI');
+const { getCounts } = require('../../../../utils/getCounts');
+const { getReleaseCountsForWindow } = require('../../../../utils/mangaUtils');
+const { createDateSelectMenu } = require('../../../../components/dropdown');
+const { createMangaEmbeds } = require('../../../../components/manga/mangaEmbeds');
+const { createAnimeEmbeds } = require('../../../../components/anime/animeEmbeds');
+const { createNavigationButtons } = require('../../../../components/buttons');
 
 async function handleNextPage(interaction, type) {
   await handlePageChange(interaction, 'next', type);
@@ -22,7 +23,6 @@ async function handlePageChange(interaction, actionID) {
 
   console.log('customId:', interaction.customId);
   let currentIndex = parseInt(indexStr, 10);
-  console.log('type from navigation', type);
 
   const data = await getForDate(date, type);
   if (!Array.isArray(data) || data.length === 0) {
@@ -43,11 +43,27 @@ async function handlePageChange(interaction, actionID) {
 
   const countByDate = getReleaseCountsForWindow(dataInRange, date);
   const navRow = createNavigationButtons(date, type, currentIndex, allData);
-  const dateMenu = createDateSelectMenu(date, countByDate);
-  const embeds = createMangaEmbeds(data, date);
+  const dateMenu = createDateSelectMenu(date, countByDate, type);
+  console.log('type verif', type);
+  let embeds;
+  switch(type) {
+    case 'anime_release' :
+      embeds = createAnimeEmbeds(data, date);
+      break;
+    case 'manga_release' :
+      embeds = createMangaEmbeds(data, date);
+      break;
+    case 'manwha_release' :
+      // embeds = createManwhaEmbeds(data, date);
+      console.log('feature dont work yet');
+      break;
+    default: 
+    console.log('type undefined or not correctly');
+  }
 
   const displayEmbed = embeds.length > 0 ? [embeds[currentIndex]] : [];
 
+  // console.log('type from navigation', type);
   await interaction.update({ embeds: displayEmbed, components: [dateMenu, navRow], content: null });
 }
 

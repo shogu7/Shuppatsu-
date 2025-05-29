@@ -15,8 +15,8 @@ function formatDateToYYYYMMDD(date) {
 function createDateSelectMenu(centerDateStr, counts = {}, type) {
   const centerDate = new Date(centerDateStr);
   const options = [];
-console.log('From createDateSelectMenu -->', type, centerDateStr);
-// console.log(counts);
+// console.log('From createDateSelectMenu -->', type, centerDateStr);
+//  console.log(counts);
   for (let i = -5; i <= 5; i++) {
     const dateObj = new Date(centerDate);
     dateObj.setDate(centerDate.getDate() + i);
@@ -31,7 +31,7 @@ console.log('From createDateSelectMenu -->', type, centerDateStr);
 
     const label =
       count > 0
-        ? `${formattedDate} - ${count} Sortie${count > 1 ? 's' : ''} de Manga`
+        ? `${formattedDate} - ${count} Sortie${count > 1 ? 's' : ''}`
         : `${formattedDate} - Aucune sortie`;
 
     options.push({

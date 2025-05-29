@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits } = require('discord.js');
-const handleInteraction = require('./events/handler/buttons/InteractionButton');
-const { handleMessageCreate } = require('./events/messageHandler');
+const handleInteraction = require('./events/handler/InteractionHandler');
+const { handleMessageCreate } = require('./events/handler/messageHandler');
+const { sendWithExpiry } = require('./utils/sendWithExpiry');
 
 require('dotenv').config(); // for token proc
 // console.log(getMangasByDate);
@@ -15,7 +16,7 @@ client.once('ready', () => {
 
 client.on('messageCreate', async (message) => { // New ver to call 
   try { // Addin try/catch to avoid crash
-  await handleMessageCreate(message)
+  await handleMessageCreate(message, sendWithExpiry)
   } catch (error) {
     console.error('Error in messageCreate:', error);
   }

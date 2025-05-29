@@ -31,14 +31,23 @@ const query = `
             romaji
             english
           }
-          coverImage { medium }
+          coverImage {
+            medium
+          }
           streamingEpisodes {
             site
             url
           }
+          startDate {
+            year
+            month
+            day
+          }
         }
       }
-      pageInfo { hasNextPage }
+      pageInfo {
+        hasNextPage
+      }
     }
   }
 `;
@@ -88,20 +97,33 @@ async function fetchPage(pageNumber) {
   });
 
   const episodesWithStreamLink = validEpisodes.map(ep => {
-    const streams = ep.media.streamingEpisodes || [];
-    const stream = streams.find(s =>
+    const streams    = ep.media.streamingEpisodes || [];
+    const stream     = streams.find(s =>
       allowedSites.has(s.site) ||
       (typeof s.url === 'string' && allowedDomains.some(d => s.url.includes(d)))
     );
+    const airingDate = new Date(ep.airingAt * 1000);
+
     return {
-      episode:   ep.episode + 1,
+      episode:   ep.episode,
       airingAt:  ep.airingAt,
+      startDate: {
+        year:  airingDate.getFullYear(),
+        month: airingDate.getMonth() + 1,
+        day:   airingDate.getDate()
+      },
+      coverImage: ep.media.coverImage,
       title:     ep.media.title,
       streamSite: stream.site,
       streamUrl:  stream.url
     };
   });
 
-  fs.writeFileSync(dataPath, JSON.stringify(episodesWithStreamLink, null, 2));
-  console.log(`✅ ${episodesWithStreamLink.length} épisodes enregistrés avec leur lien de streaming dans ${dataPath}`);
+  const episodesThisMonth = episodesWithStreamLink.filter(ep => {
+  const airingDate = new Date(ep.airingAt * 1000);
+  return airingDate.getMonth() + 1 === currentMonth && airingDate.getFullYear() === currentYear;
+  });
+
+fs.writeFileSync(dataPath, JSON.stringify(episodesThisMonth, null, 2));
+console.log(`✅ ${episodesThisMonth.length} épisodes diffusés en ${currentMonth}/${currentYear} enregistrés dans ${dataPath}`);
 })();
