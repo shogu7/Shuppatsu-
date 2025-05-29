@@ -30,7 +30,7 @@ function createMangaEmbeds(mangas, date) {
       .setTitle(`${index + 1}. ${title}`)
       .setDescription(`**Chapitre :** ${chapter}`)
       .setURL(manga.siteUrl)
-      .setImage(manga.coverImage?.medium || null)
+      .setImage(manga.coverImage?.large || manga.coverImage?.medium || null)
       .setFooter({ text: `📅 Sortie du ${formattedDate}` })
       .setTimestamp();
   });

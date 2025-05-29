@@ -52,6 +52,7 @@ const query = `
           day
         }
         coverImage {
+          large
           medium
         }
         siteUrl

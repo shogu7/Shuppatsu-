@@ -30,7 +30,7 @@ function createAnimeEmbeds(animes, date) {
       .setTitle(`${index + 1}. ${title}`)
       .setDescription(`**Épisode :** ${episode}`)
       .setURL(anime.streamUrl)
-      .setImage(anime.coverImage?.medium || null)
+      .setImage(anime.coverImage?.large || anime.coverImage?.medium || null)
       .setFooter({ text: `📅 Sortie du ${formattedDate}` })
       .setTimestamp();
   });

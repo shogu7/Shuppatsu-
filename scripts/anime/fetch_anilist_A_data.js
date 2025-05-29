@@ -32,6 +32,7 @@ const query = `
             english
           }
           coverImage {
+            large
             medium
           }
           streamingEpisodes {
