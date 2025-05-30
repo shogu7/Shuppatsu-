@@ -14,7 +14,13 @@ build/
 .DS_Store
 package-lock.json
 configs/
-dataM-2025-5.json
 jikan_v3/
-data/
+scripts/anime/data/dataA-2025-3.json
+scripts/anime/data/dataA-2025-4.json
+scripts/manga/data/dataM-2025-1.json
+scripts/manga/data/dataM-2025-2.json
+scripts/manga/data/dataM-2025-3.json
+scripts/manga/data/dataM-2025-4.json
+scripts/manwha/data/dataW-2025-3.json
+scripts/manwha/data/dataW-2025-4.json
 Example Directory Overview.txt
