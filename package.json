@@ -12,6 +12,7 @@
     "vitest": "^3.1.4"
   },
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "start": "node index.js"
   }
 }
