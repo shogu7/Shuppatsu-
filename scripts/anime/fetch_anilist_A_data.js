@@ -3,9 +3,13 @@ const axios = require('axios');
 const { enqueueRequest } = require('../../utils/ratelimiter');
 const path = require('path');
 
-const currentDate   = new Date();
-const currentYear   = currentDate.getFullYear();
-const currentMonth  = currentDate.getMonth() + 1;
+const currentDate = new Date();
+let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth() - 1; //! +1 each month
+if (currentMonth > 12) {
+  currentMonth = 1;
+  currentYear++;
+}
 
 const startTimestamp = Math.floor(new Date(currentYear, currentMonth - 1, 1).getTime() / 1000);
 const endTimestamp   = Math.floor(new Date(currentYear, currentMonth,      1).getTime() / 1000);
