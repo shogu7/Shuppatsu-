@@ -14,17 +14,17 @@ async function getCounts(centerDate, type) {
       case 'anime_release':
       case 'anime':
         dataType = 'anime';
-        typeIndince = 'a';
+        typeIndince = 'A';
         break;
       case 'manwha_release':
       case 'manwha':
         dataType = 'manwha';
-        typeIndince = 'm';
+        typeIndince = 'M';
         break;
       case 'manga_release':
       case 'manga':
         dataType = 'manga';
-        typeIndince = 'm';
+        typeIndince = 'W';
         break;
       default:
         console.warn(`getCounts: type inconnu « ${type} », renvoi null`);
