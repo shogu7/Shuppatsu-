@@ -55,7 +55,6 @@ async function getForDate(centerDate, type) {
       }
       return false;
     });
-    console.log(filteredData);
     return filteredData;
   } catch (err) {
     console.error('Erreur lors de la lecture JSON ou du filtrage :', err);

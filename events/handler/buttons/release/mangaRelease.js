@@ -12,7 +12,6 @@ async function handleMangaRelease(interaction, type) {
   await interaction.deferUpdate();
 
   const mangas = await getForDate(todayStr);
-  console.log('from mangaRelease.js -->', mangas);
   const mangaInRange = await getMangaCounts(todayStr);
 
   const countByDate = getReleaseCountsForWindow(mangaInRange, todayStr);

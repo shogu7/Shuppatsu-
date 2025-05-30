@@ -21,7 +21,6 @@ async function handlePageChange(interaction, actionID) {
   const date = parts[3];
   const indexStr = parts[4];
 
-  console.log('customId:', interaction.customId);
   let currentIndex = parseInt(indexStr, 10);
 
   const data = await getForDate(date, type);
@@ -44,7 +43,6 @@ async function handlePageChange(interaction, actionID) {
   const countByDate = getReleaseCountsForWindow(dataInRange, date);
   const navRow = createNavigationButtons(date, type, currentIndex, allData);
   const dateMenu = createDateSelectMenu(date, countByDate, type);
-  console.log('type verif', type);
   let embeds;
   switch(type) {
     case 'anime_release' :

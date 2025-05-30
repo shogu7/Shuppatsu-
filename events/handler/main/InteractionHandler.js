@@ -7,7 +7,7 @@ const { exitInteger } = require('../buttons/home/exit');
 
 async function handleInteraction(interaction) {
 //?#region : console.log (bordel)
-console.log('---------------------------------------------------------->');
+// console.log('---------------------------------------------------------->');
 // console.log('GLOBAL HANDLER -- Interaction reçue');
 // console.log('Type:', interaction.type);
 // console.log('customId:', interaction.customId);
@@ -37,9 +37,9 @@ console.log('---------------------------------------------------------->');
     const [action, type, date, indexStr] = customId.split('_');
 
     if (action === 'prev' || action === 'next') {
-      console.log('type on button before constfulltype', type);
+      // console.log('type on button before constfulltype', type);
       const fullType = type + '_release';
-      console.log('l.40 : fullType on button after constfulltype', fullType);
+      // console.log('l.40 : fullType on button after constfulltype', fullType);
       return action === 'next'
         ? await handleNextPage(interaction, fullType)
         : await handlePrevPage(interaction, fullType);

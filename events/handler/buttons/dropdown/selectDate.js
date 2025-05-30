@@ -9,12 +9,12 @@ const { createNavigationButtons } = require('../../../../components/buttons');
 const { errorEmbeds } = require('../../../../components/basicEmbeds/errorEmbeds');
 
 async function handleSelectDate(interaction, type) {
-console.log('[handleSelectDate] type -->', type);
+//? console.log('[handleSelectDate] type -->', type);
 
   if (!interaction.isStringSelectMenu() || !interaction.customId.startsWith('date_select')) return;
 
   const selectedDate = interaction.values[0];
-  console.log('[handleSelectDate] selectedDate -->', selectedDate);
+  //? console.log('[handleSelectDate] selectedDate -->', selectedDate);
 
   await interaction.deferUpdate();
 
