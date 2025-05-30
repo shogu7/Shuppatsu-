@@ -2,8 +2,8 @@ const { getForDate } = require('../../../../aniListAPI');
 const { getCounts } = require('../../../../utils/getCounts');
 const { getReleaseCountsForWindow } = require('../../../../utils/mangaUtils');
 const { createDateSelectMenu } = require('../../../../components/dropdown/dropdown');
-const { createMangaEmbeds } = require('../../../../components/manga/mangaEmbeds');
-const { createAnimeEmbeds } = require('../../../../components/anime/animeEmbeds');
+const { createMangaEmbeds } = require('../../../../components/release/manga/mangaEmbeds');
+const { createAnimeEmbeds } = require('../../../../components/release/anime/animeEmbeds');
 const { createNavigationButtons } = require('../../../../components/buttons');
 
 async function handleNextPage(interaction, type) {

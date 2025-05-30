@@ -1,36 +1,38 @@
-const showRelease = require('./shared/showRelease');
-const { createExitEmbeds } = require('../../components/basicEmbeds/exitEmbed');
-const { handleNextPage, handlePrevPage } = require('./buttons/navigation/navigation');
-const handleSelectDate  = require('./buttons/dropdown/selectDate');
-const { homeInteger } = require('./buttons/home/home');
-const { exitInteger } = require('./buttons/home/exit');
+const showRelease = require('../shared/showRelease');
+const { createExitEmbeds } = require('../../../components/basicEmbeds/exitEmbed');
+const { handleNextPage, handlePrevPage } = require('../buttons/navigation/navigation');
+const handleSelectDate  = require('../buttons/dropdown/selectDate');
+const { homeInteger } = require('../buttons/home/home');
+const { exitInteger } = require('../buttons/home/exit');
 
 async function handleInteraction(interaction) {
+//?#region : console.log (bordel)
 console.log('---------------------------------------------------------->');
 // console.log('GLOBAL HANDLER -- Interaction reçue');
 // console.log('Type:', interaction.type);
 // console.log('customId:', interaction.customId);
 // console.log('isStringSelectMenu:', interaction.isStringSelectMenu?.());
-
+//#endregion
   if (!interaction.isButton() && !interaction.isStringSelectMenu()) return;
 
   const customId = interaction.customId;
-  // console.log('here is the customID :', customId);
   let type = null;
 
-  // EXIT LOGIC CALL
+  //#region: EXIT LOGIC CALL :
   if (customId === 'exit') {
     return await exitInteger(interaction);
   }
+  //#endregion
 
-  // DATE_SELECT LOGIC CALL
+  //#region: DATE_SELECT LOGIC CALL 
   if (interaction.isStringSelectMenu() && customId.startsWith('date_select_')) {
     type = customId.substring('date_select_'.length); 
     // console.log('From AFTER ALL interactionButtons.js (type print) -->', type);
     return await handleSelectDate(interaction, type);
   }
+  //#endregion
 
-  // BUTTON PREV/NEXT LOGIC CALL
+  //#region: BUTTON PREV/NEXT LOGIC CALL
   if (interaction.isButton()) {
     const [action, type, date, indexStr] = customId.split('_');
 
@@ -43,13 +45,16 @@ console.log('---------------------------------------------------------->');
         : await handlePrevPage(interaction, fullType);
     }
   }
+  //#endregion
 
+  //#region: BACK logic
   if (customId === 'back') {
     type = null;
     return await homeInteger(interaction);
   }
+  //#endregion
 
-  // Type logic
+  //!#region: Type logic
   if (customId.endsWith('_release')) {
     type = customId;
     if (type.startsWith('date_select_')) {
@@ -62,6 +67,7 @@ console.log('---------------------------------------------------------->');
     await showRelease(interaction, todayStr, type);
     return;
   }
+  //#endregion
   return;
 }
 module.exports = handleInteraction;

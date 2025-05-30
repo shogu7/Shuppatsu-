@@ -1,8 +1,12 @@
 const { ActionRowBuilder } = require('discord.js');
 const { expiredEmbeds } = require('../components/basicEmbeds/expiredEmbeds');
+const { addActiveEmbed } = require('./embedCache');
 
 async function sendWithExpiry(channel, embeds, rows, timeout = 90_000, userId = null) {
   const sent = await channel.send({ embeds, components: rows });
+
+  addActiveEmbed(channel.id, sent.id);
+
   const collector = sent.createMessageComponentCollector({
     filter: i => !userId || i.user.id === userId,
     time: timeout

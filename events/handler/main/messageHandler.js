@@ -1,5 +1,5 @@
-const { createInitialButtons } = require('../../components/buttons');
-const { createHomeEmbeds }     = require('../../components/basicEmbeds/homeEmbeds');
+const { createInitialButtons } = require('../../../components/buttons');
+const { createHomeEmbeds }     = require('../../../components/basicEmbeds/homeEmbeds');
 
 /**
  * @param {Message} message

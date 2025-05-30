@@ -4,8 +4,12 @@ const { enqueueRequest } = require('../../utils/ratelimiter');
 const path = require('path');
 
 const currentDate = new Date();
-const currentYear = currentDate.getFullYear();
-const currentMonth = currentDate.getMonth() + 1;
+let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth() + 2; // +1 each month
+if (currentMonth > 12) {
+  currentMonth = 1;
+  currentYear++;
+}
 
 const startDateStr = `${currentYear}-${String(currentMonth).padStart(2, '0')}-01`;
 let nextYear = currentYear;
@@ -17,7 +21,7 @@ if (nextMonth > 12) {
 const endDateStr = `${nextYear}-${String(nextMonth).padStart(2, '0')}-01`;
 
 const dataDir = path.join(__dirname, 'data');
-const dataPath = path.join(dataDir, `dataM-${currentYear}-${currentMonth}.json`);
+const dataPath = path.join(dataDir, `dataW-${currentYear}-${currentMonth}.json`);
 
 const ANILIST_URL = 'https://graphql.anilist.co';
 
@@ -46,6 +50,7 @@ const query = `
           day
         }
         coverImage {
+          large
           medium
         }
         siteUrl

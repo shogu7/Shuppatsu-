@@ -19,7 +19,7 @@ async function getForDate(centerDate, type) {
       case 'manwha_release':
       case 'manwha':
         dataType = 'manwha';
-        typeIndince = 'M';
+        typeIndince = 'W';
         break;
       case 'manga_release':
       case 'manga':
@@ -47,8 +47,8 @@ async function getForDate(centerDate, type) {
     const endRange = new Date(center);
     endRange.setDate(center.getDate() + 5);
 
-    const filteredData = allData.filter(manga => {
-      const sd = manga.startDate || {};
+    const filteredData = allData.filter(data => {
+      const sd = data.startDate || {};
       if (sd.year && sd.month && sd.day) {
         const dataDateStr = `${sd.year}-${String(sd.month).padStart(2, '0')}-${String(sd.day).padStart(2, '0')}`;
         return dataDateStr === centerDate;

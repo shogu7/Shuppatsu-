@@ -2,9 +2,9 @@ const { getForDate } = require('../../../../aniListAPI');
 const { getCounts } = require('../../../../utils/getCounts');
 const { getReleaseCountsForWindow } = require('../../../../utils/mangaUtils');
 const { createDateSelectMenu } = require('../../../../components/dropdown/dropdown');
-const { createMangaEmbeds } = require('../../../../components/manga/mangaEmbeds');
-const { createAnimeEmbeds } = require('../../../../components/anime/animeEmbeds');
-// const { reateManwhaEmbeds } = require('../../../../components/manwha/manwhaEmbeds'); for later
+const { createMangaEmbeds } = require('../../../../components/release/manga/mangaEmbeds');
+const { createAnimeEmbeds } = require('../../../../components/release/anime/animeEmbeds');
+//! const { reateManwhaEmbeds } = require('../../../../components/manwha/manwhaEmbeds'); for later
 const { createNavigationButtons } = require('../../../../components/buttons');
 const { errorEmbeds } = require('../../../../components/basicEmbeds/errorEmbeds');
 
@@ -21,7 +21,7 @@ console.log('[handleSelectDate] type -->', type);
   const data = await getForDate(selectedDate, type);
   const dataInRange = await getCounts(selectedDate, type);
 
-  if (!dataInRange) { // erreur détectée
+  if (!dataInRange) { //? erreur détectée
     await interaction.editReply({ embeds: [errorEmbeds()] });
     return;
   }
