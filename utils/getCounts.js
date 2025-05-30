@@ -19,12 +19,12 @@ async function getCounts(centerDate, type) {
       case 'manwha_release':
       case 'manwha':
         dataType = 'manwha';
-        typeIndince = 'M';
+        typeIndince = 'W';
         break;
       case 'manga_release':
       case 'manga':
         dataType = 'manga';
-        typeIndince = 'W';
+        typeIndince = 'M';
         break;
       default:
         console.warn(`getCounts: type inconnu « ${type} », renvoi null`);
