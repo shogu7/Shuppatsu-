@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const prefix = '!';
+const prefix = 's';
 
 const commands = new Map();
 const commandsPath = path.join(__dirname, '../../../commands');
@@ -12,15 +12,16 @@ for (const file of commandFiles) {
 }
 
 async function routerHandler(message) {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
+  if (message.author.bot || !message.content.startsWith(prefix)) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
-  if (!commands.has(commandName)) return;
+  const command =
+    commands.get(commandName) ||
+    [...commands.values()].find(cmd => cmd.aliases?.includes(commandName));
 
-  const command = commands.get(commandName);
+  if (!command) return;
 
   try {
     await command.execute(message, args);
