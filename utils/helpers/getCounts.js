@@ -30,7 +30,7 @@ async function getCounts(centerDate, type) {
         console.warn(`getCounts: type inconnu « ${type} », renvoi null`);
         return null;
     }
-    const dataPath = path.join(__dirname, '..', 'scripts', dataType, 'data', `data${typeIndince}-${year}-${month}.json`);
+    const dataPath = path.join(__dirname, '..', '..',  'scripts', dataType, 'data', `data${typeIndince}-${year}-${month}.json`);
 
     if (!fs.existsSync(dataPath)) {
       console.warn(`Fichier JSON introuvable : ${dataPath}`);

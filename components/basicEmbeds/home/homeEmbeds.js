@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_START } = require('../../config');
+const { GIF_START } = require('../../../config');
 
 function createHomeEmbeds() {
   const embed = new EmbedBuilder()

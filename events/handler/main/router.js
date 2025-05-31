@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { commandUndefined } = require("../../../utils/error/commandUndefined")
 const prefix = 's';
 
 const commands = new Map();
@@ -21,7 +22,7 @@ async function routerHandler(message) {
     commands.get(commandName) ||
     [...commands.values()].find(cmd => cmd.aliases?.includes(commandName));
 
-  if (!command) return;
+  if (!command) return await commandUndefined(message);
 
   try {
     await command.execute(message, args);

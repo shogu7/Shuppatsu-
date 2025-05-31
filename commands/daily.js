@@ -1,4 +1,4 @@
-const { sendDailyRelease } = require('../utils/sendDailyRelease');
+const { sendDailyRelease } = require('../utils/scheduler/sendDailyRelease');
 
 module.exports = {
   name: 'daily',

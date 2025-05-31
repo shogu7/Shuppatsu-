@@ -1,7 +1,7 @@
-const { DailyAnimeEmbed } = require('../components/dailyEmbeds/todayAnime');
-const { DailyMangaEmbed } = require('../components/dailyEmbeds/todayManga');
-const { DailyManwhaEmbed } = require('../components/dailyEmbeds/todayManwha');
-const { getForDate } = require('../aniListAPI');
+const { DailyAnimeEmbed } = require('../../components/dailyEmbeds/todayAnime');
+const { DailyMangaEmbed } = require('../../components/dailyEmbeds/todayManga');
+const { DailyManwhaEmbed } = require('../../components/dailyEmbeds/todayManwha');
+const { getForDate } = require('../helpers/getReleaseData');
 
 /**
  * @param {TextChannel} channel
@@ -23,7 +23,7 @@ async function sendDailyRelease(channel, date = null) {
       embeds: [animeEmbed, mangaEmbed, manwhaEmbed]
     });
 
-    console.log(`[sendDailyRelease] ✅ Sorties envoyées pour la date ${targetDate}`);
+    console.log(`[sendDailyRelease] ✅ Sorties envoyées pour la date ${new Date().toLocaleString()}`);
   } catch (error) {
     console.error('[sendDailyRelease] ❌ Erreur lors de la récupération ou de l’envoi :', error);
     throw error;

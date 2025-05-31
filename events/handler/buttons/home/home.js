@@ -1,5 +1,5 @@
 const { createInitialButtons } = require('../../../../components/buttons');
-const { createHomeEmbeds } = require('../../../../components/basicEmbeds/homeEmbeds');
+const { createHomeEmbeds } = require('../../../../components/basicEmbeds/home/homeEmbeds');
 
 async function homeInteger(interaction) {
 

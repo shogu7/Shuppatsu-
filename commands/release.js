@@ -1,4 +1,4 @@
-const { createHomeEmbeds } = require('../components/basicEmbeds/homeEmbeds');
+const { createHomeEmbeds } = require('../components/basicEmbeds/home/homeEmbeds');
 const { createInitialButtons } = require('../components/buttons');
 const { sendWithExpiry } = require('../utils/sendWithExpiry');
 

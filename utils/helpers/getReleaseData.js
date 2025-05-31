@@ -30,11 +30,11 @@ async function getForDate(centerDate, type) {
         console.warn(`getCounts: type inconnu « ${type} », renvoi null`);
         return null;
     }
-    const dataPath = path.join(__dirname, 'scripts', dataType, 'data', `data${typeIndince}-${year}-${month}.json`);
+    const dataPath = path.join(__dirname, '..', '..', 'scripts', dataType, 'data', `data${typeIndince}-${year}-${month}.json`);
     // console.log('From aniListAPI.js -->', dataPath);
 
     if (!fs.existsSync(dataPath)) {
-      console.warn(`proutFichier JSON introuvable : ${dataPath}`);
+      console.warn(`[getReleaseData.js]Fichier JSON introuvable : ${dataPath}`);
       return [];
     }
 

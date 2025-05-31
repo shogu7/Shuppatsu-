@@ -1,10 +1,10 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 const handleInteraction = require('./events/handler/main/InteractionHandler');
 const { routerHandler } = require('./events/handler/main/router');
-const { shutdownEmbeds } = require('./components/basicEmbeds/shutdownEmbeds');
-const { getActiveEmbeds } = require('./utils/embedCache');
+const { shutdownEmbeds } = require('./components/basicEmbeds/shutdown/shutdownEmbeds');
+const { getActiveEmbeds } = require('./utils/cache/embedCache');
 const { sendWithExpiry } = require('./utils/sendWithExpiry');
-const { scheduleDailyMessages } = require('./utils/dailyScheduler');
+const { scheduleDailyMessages } = require('./utils/scheduler/dailyScheduler');
 
 
 require('dotenv').config(); // for token proc

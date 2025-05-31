@@ -1,12 +1,12 @@
-const { getForDate } = require('../../../aniListAPI');
-const { getCounts } = require('../../../utils/getCounts');
-const { getReleaseCountsForWindow } = require('../../../utils/mangaUtils');
+const { getForDate } = require('../../../utils/helpers/getReleaseData');
+const { getCounts } = require('../../../utils/helpers/getCounts');
+const { getReleaseCountsForWindow } = require('../../../utils/helpers/mangaUtils');
 const { createDateSelectMenu } = require('../../../components/dropdown/dropdown');
 const { createMangaEmbeds } = require('../../../components/release/manga/mangaEmbeds');
 const { createAnimeEmbeds } = require('../../../components/release/anime/animeEmbeds');
 const { createManwhaEmbeds } = require('../../../components/release/manwha/manwhaEmbeds');
 const { createNavigationButtons } = require('../../../components/buttons');
-const { errorEmbeds } = require('../../../components/basicEmbeds/errorEmbeds');
+const { errorEmbeds } = require('../../../components/basicEmbeds/error/errorEmbeds');
 
 module.exports = async function showRelease(interaction, dateStr, type) {
     // console.log('type avant getforDate', type);
