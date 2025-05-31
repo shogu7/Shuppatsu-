@@ -37,6 +37,10 @@ function createInitialButtons() {
       .setLabel('Anime Release')
       .setStyle(ButtonStyle.Success),
     new ButtonBuilder()
+      .setCustomId('manwha_release')
+      .setLabel('Manwha Release')
+      .setStyle(ButtonStyle.Success),
+    new ButtonBuilder()
       .setCustomId('exit')
       .setLabel('Exit')
       .setStyle(ButtonStyle.Danger)

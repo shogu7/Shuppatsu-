@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_NO_RESULT_ANIME } = require('../../../config');
+const { GIF_NO_RESULT_A } = require('../../../config');
 
 function createAnimeEmbeds(animes, date) {
   const dateObj = new Date(date);
@@ -11,10 +11,10 @@ function createAnimeEmbeds(animes, date) {
 
   if (animes.length === 0) {
     const noResultEmbed = new EmbedBuilder()
-      .setColor('#FF6B6B')
+      .setColor('#9B59B6')
       .setTitle(`🎬 Sorties d'Anime du ${formattedDate}`)
       .setDescription("Aucun anime trouvé pour cette date.")
-      .setImage(GIF_NO_RESULT_ANIME)
+      .setImage(GIF_NO_RESULT_A)
       .setTimestamp();
 
     return [noResultEmbed];
@@ -22,11 +22,11 @@ function createAnimeEmbeds(animes, date) {
 
   return animes.map((anime, index) => {
     const rawTitle = anime.title?.english || anime.title?.romaji || anime.title?.native || "Titre inconnu";
-    const title = rawTitle.length > 70 ? rawTitle.substring(0, 70) + '…' : rawTitle;
+    const title = rawTitle.length > 200 ? rawTitle.substring(0, 200) + '…' : rawTitle;
     const episode = anime.episode;
 
     return new EmbedBuilder()
-      .setColor('#0099ff')
+      .setColor('#9B59B6')
       .setTitle(`${index + 1}. ${title}`)
       .setDescription(`**Épisode :** ${episode}`)
       .setURL(anime.streamUrl)

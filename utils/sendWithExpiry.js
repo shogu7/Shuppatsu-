@@ -1,4 +1,4 @@
-const { ActionRowBuilder } = require('discord.js');
+const { ActionRowBuilder, EmbedBuilder } = require('discord.js');
 const { expiredEmbeds } = require('../components/basicEmbeds/expiredEmbeds');
 const { addActiveEmbed } = require('./embedCache');
 
@@ -19,9 +19,12 @@ async function sendWithExpiry(channel, embeds, rows, timeout = 90_000, userId = 
       return nr;
     });
 
+    const oldEmbed = sent.embeds[0];
+    const newEmbed = EmbedBuilder.from(oldEmbed).setFooter({ text: '⏱️ Session expirée. Ce menu est expiré ! Relancez la commande si nécessaire.' });
+
     await sent.edit({
-      embeds: expiredEmbeds(),
-      components: disabled
+      embeds: [newEmbed],
+      components: []
     });
   });
 

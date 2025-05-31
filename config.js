@@ -7,8 +7,9 @@ module.exports = {
   GIF_SHUTDOWN: 'https://c.tenor.com/9wzq3wK8NwcAAAAd/tenor.gif', // https://c.tenor.com/1rMglc7lcvgAAAAd/tenor.gif // https://c.tenor.com/6YdH9_jC3AMAAAAC/tenor.gif
   //#endregion
   //#region: RESULT GIF :
-  GIF_NO_RESULT: 'https://c.tenor.com/ifGz550Sh_4AAAAd/tenor.gif',
-  GIF_NO_RESULT_ANIME: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnF0YW1taWw5dmx1Ymk3bHN2dWZuYmQwMnpiczZwNjc3NzdiZW1jdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BSxFhxneZPCvK/giphy.gif',
+  GIF_NO_RESULT_M: 'https://c.tenor.com/ifGz550Sh_4AAAAd/tenor.gif',
+  GIF_NO_RESULT_A: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnF0YW1taWw5dmx1Ymk3bHN2dWZuYmQwMnpiczZwNjc3NzdiZW1jdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BSxFhxneZPCvK/giphy.gif',
+  GIF_NO_RESULT_W : 'https://c.tenor.com/6YdH9_jC3AMAAAAC/tenor.gif',
   GIF_NO_RESULT_SCHEDULE_M: "https://c.tenor.com/Mp0Rcwa4qYoAAAAd/tenor.gif",
   GIF_NO_RESULT_SCHEDULE_A: "https://c.tenor.com/Mp0Rcwa4qYoAAAAd/tenor.gif",
   GIF_NO_RESULT_SCHEDULE_W: "https://c.tenor.com/wamZ4YAICosAAAAd/tenor.gif"

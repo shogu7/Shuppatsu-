@@ -4,7 +4,7 @@ const { getReleaseCountsForWindow } = require('../../../../utils/mangaUtils');
 const { createDateSelectMenu } = require('../../../../components/dropdown/dropdown');
 const { createMangaEmbeds } = require('../../../../components/release/manga/mangaEmbeds');
 const { createAnimeEmbeds } = require('../../../../components/release/anime/animeEmbeds');
-//! const { reateManwhaEmbeds } = require('../../../../components/manwha/manwhaEmbeds'); for later
+const { createManwhaEmbeds } = require('../../../../components/release/manwha/manwhaEmbeds');
 const { createNavigationButtons } = require('../../../../components/buttons');
 const { errorEmbeds } = require('../../../../components/basicEmbeds/errorEmbeds');
 

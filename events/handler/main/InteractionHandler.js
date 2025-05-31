@@ -1,5 +1,4 @@
 const showRelease = require('../shared/showRelease');
-const { createExitEmbeds } = require('../../../components/basicEmbeds/exitEmbed');
 const { handleNextPage, handlePrevPage } = require('../buttons/navigation/navigation');
 const handleSelectDate  = require('../buttons/dropdown/selectDate');
 const { homeInteger } = require('../buttons/home/home');
@@ -54,13 +53,12 @@ async function handleInteraction(interaction) {
   }
   //#endregion
 
-  //!#region: Type logic
+  //#region: Type logic
   if (customId.endsWith('_release')) {
     type = customId;
     if (type.startsWith('date_select_')) {
       type = type.substring('date_select_'.length);
     }
-    // console.log('l.23 from interactionButton.js -->', type);
     const todayStr = new Date().toISOString().split('T')[0];
 
     await interaction.deferUpdate();

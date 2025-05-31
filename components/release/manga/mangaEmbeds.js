@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_NO_RESULT } = require('../../../config');
+const { GIF_NO_RESULT_M } = require('../../../config');
 
 function createMangaEmbeds(mangas, date) {
   const dateObj = new Date(date);
@@ -11,10 +11,10 @@ function createMangaEmbeds(mangas, date) {
 
   if (mangas.length === 0) {
     const noResultEmbed = new EmbedBuilder()
-      .setColor('#FF6B6B')
+      .setColor('#1ABC9C')
       .setTitle(`📚 Sorties Manga du ${formattedDate}`)
       .setDescription("Aucun manga trouvé pour cette date.")
-      .setImage(GIF_NO_RESULT)
+      .setImage(GIF_NO_RESULT_M)
       .setTimestamp();
 
     return [noResultEmbed];
@@ -22,11 +22,11 @@ function createMangaEmbeds(mangas, date) {
 
   return mangas.map((manga, index) => {
     const rawTitle = manga.title?.english || manga.title?.romaji || manga.title?.native || "Titre inconnu";
-    const title = rawTitle.length > 40 ? rawTitle.substring(0, 40) + '…' : rawTitle;
-    const chapter = manga.chapter;
+    const title = rawTitle.length > 80 ? rawTitle.substring(0, 80) + '…' : rawTitle;
+    const chapter = manga.chapter || "Inconnu";
 
     return new EmbedBuilder()
-      .setColor('#fe6800')
+      .setColor('#1ABC9C')
       .setTitle(`${index + 1}. ${title}`)
       .setDescription(`**Chapitre :** ${chapter}`)
       .setURL(manga.siteUrl)

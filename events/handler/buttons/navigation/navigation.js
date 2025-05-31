@@ -4,6 +4,7 @@ const { getReleaseCountsForWindow } = require('../../../../utils/mangaUtils');
 const { createDateSelectMenu } = require('../../../../components/dropdown/dropdown');
 const { createMangaEmbeds } = require('../../../../components/release/manga/mangaEmbeds');
 const { createAnimeEmbeds } = require('../../../../components/release/anime/animeEmbeds');
+const { createManwhaEmbeds } = require('../../../../components/release/manwha/manwhaEmbeds');
 const { createNavigationButtons } = require('../../../../components/buttons');
 
 async function handleNextPage(interaction, type) {
@@ -52,8 +53,7 @@ async function handlePageChange(interaction, actionID) {
       embeds = createMangaEmbeds(data, date);
       break;
     case 'manwha_release' :
-      // embeds = createManwhaEmbeds(data, date);
-      console.log('feature dont work yet');
+      embeds = createManwhaEmbeds(data, date);
       break;
     default: 
     console.log('type undefined or not correctly');
