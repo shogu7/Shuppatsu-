@@ -24,6 +24,6 @@ scripts/manga/data/dataM-2025-4.json
 scripts/manwha/data/dataW-2025-3.json
 scripts/manwha/data/dataW-2025-4.json
 Example Directory Overview.txt
-components/basicEmbeds/helpEmbeds.js
-commands/help.js
+# components/basicEmbeds/helpEmbeds.js
+# commands/help.js
 docs/

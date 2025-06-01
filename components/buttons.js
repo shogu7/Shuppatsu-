@@ -26,7 +26,7 @@ function createNavigationButtons(date, type, currentIndex = 0, totalMangas = 0) 
   return new ActionRowBuilder().addComponents(prevButton, exitButton, nextButton, backButton);
 }
 
-function createInitialButtons() {
+function createReleaseButtons() {
   return new ActionRowBuilder().addComponents(
     new ButtonBuilder()
       .setCustomId('manga_release')
@@ -49,5 +49,5 @@ function createInitialButtons() {
 
 module.exports = {
   createNavigationButtons,
-  createInitialButtons,
+  createReleaseButtons,
 };

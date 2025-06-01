@@ -1,33 +1,31 @@
-// const { EmbedBuilder } = require('discord.js');
-// const { GIF_COMMAND } = require('../../config');
+const { EmbedBuilder } = require('discord.js');
+const fs = require('fs');
+const path = require('path');
 
-// function expiredEmbeds() {
+function createHelpEmbeds() {
+  const commandsPath = path.join(__dirname, '../../../commands');
+  const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
-//     const commands = new Map();
-//     const commandsPath = path.join(__dirname, '../../../commands');
-//     const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+  const embed = new EmbedBuilder()
+    .setColor('#2C3E50')
+    .setTitle('📝  Liste des commandes disponibles :');
 
-//     for (const file of commandFiles) {
-//     const command = require(path.join(commandsPath, file));
-//     commands.set(command.name);
-//     }
+  let descriptionText = '';
 
-//   return command.map((name, description) => {
-//     const name = command.name || "Inconnu";
-//     const description = command.description || "No description";
-//     const commandName = args.shift().toLowerCase();
-//     const cmdName = // TODO: for each ---> cmdName ---> show description + Name + Alias ----> Embeds
-//     commands.get(commandName) ||
-//     [...commands.values()].find(cmd => cmd.aliases?.includes(commandName));
+  for (const file of commandFiles) {
+    const command = require(path.join(commandsPath, file));
+    const name = command.name || 'Commande inconnue';
+    const description = command.description || 'Pas de description disponible.';
+    const aliases = command.aliases?.length ? `Alias : ${command.aliases.join(', ')}` : 'Pas d\'alias';
 
-//     return new EmbedBuilder()
-//       .setColor('#1ABC9C')
-//       .setTitle(`${cmdName}`)
-//       .setDescription(`**Description :** ${chapter}`)
-//       .setImage(null)
-//       .setFooter({ text: `📅 Sortie du ${formattedDate}` })
-//       .setTimestamp();
-//   });
+    descriptionText += `**${name}**\nDescription : ${description}\n${aliases}\n\n`;
+  }
 
-// }
-// module.exports = { expiredEmbeds };
+  embed.setDescription(descriptionText.trim())
+       .setFooter({ text: '📅 Liste des commandes disponibles' })
+       .setTimestamp();
+
+  return [embed]
+}
+
+module.exports = { createHelpEmbeds };

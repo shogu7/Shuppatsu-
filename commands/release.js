@@ -1,5 +1,5 @@
 const { createHomeEmbeds } = require('../components/basicEmbeds/home/homeEmbeds');
-const { createInitialButtons } = require('../components/buttons');
+const { createReleaseButtons } = require('../components/buttons');
 const { sendWithExpiry } = require('../utils/sendWithExpiry');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
   description: 'Affiche les différent boutons de redirection sur les pages d\'oeuvres',
   execute: async (message) => {
     const embeds = createHomeEmbeds();
-    const row = createInitialButtons();
+    const row = createReleaseButtons();
 
     await sendWithExpiry(
       message.channel,
