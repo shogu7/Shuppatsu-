@@ -6,7 +6,7 @@ const { sendDailyRelease } = require('./sendDailyRelease');
  */
 function scheduleDailyMessages(client) {
   cron.schedule(
-    '45 10 * * *',
+    '49 10 * * *',
     async () => {
       try {
         const channel = await client.channels.fetch(process.env.CHANNEL_ID_DAILY);
