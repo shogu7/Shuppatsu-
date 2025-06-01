@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 function createHelpEmbeds() {
-  const commandsPath = path.join(__dirname, '../../../commands');
+  const commandsPath = path.join(__dirname, '../../../../commands');
   const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
   const embed = new EmbedBuilder()
