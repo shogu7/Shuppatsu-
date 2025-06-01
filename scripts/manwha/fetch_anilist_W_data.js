@@ -1,6 +1,6 @@
 const fs = require('fs');
 const axios = require('axios');
-const { enqueueRequest } = require('../../utils/ratelimiter');
+const { enqueueRequest } = require('../../utils/helpers/ratelimiter');
 const path = require('path');
 
 const currentDate = new Date();

@@ -1,0 +1,515 @@
+[
+  {
+    "episode": 24,
+    "airingAt": 1751637600,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 4
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx176301-TIGmldLffQGX.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx176301-TIGmldLffQGX.jpg"
+    },
+    "title": {
+      "romaji": "Kusuriya no Hitorigoto 2nd Season",
+      "english": "The Apothecary Diaries Season 2"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GZ7UDM99D/the-stronghold"
+  },
+  {
+    "episode": 1,
+    "airingAt": 1751639400,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 4
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177175-uj13fUT8bqLD.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx177175-uj13fUT8bqLD.jpg"
+    },
+    "title": {
+      "romaji": "Arknights: Enshin Shomei",
+      "english": "Arknights: RISE FROM EMBER"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GWDU8EW3D/lullabye"
+  },
+  {
+    "episode": 1168,
+    "airingAt": 1751706000,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 5
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-MyYT7K3chBdO.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx235-MyYT7K3chBdO.jpg"
+    },
+    "title": {
+      "romaji": "Meitantei Conan",
+      "english": "Case Closed"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/case-closed/episode-1012-picking-wild-plants-and-clovers-part-two-812416"
+  },
+  {
+    "episode": 14,
+    "airingAt": 1751707560,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 5
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx184639-tmj8NbTroNeI.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx184639-tmj8NbTroNeI.jpg"
+    },
+    "title": {
+      "romaji": "Anne Shirley",
+      "english": "Anne Shirley"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GX9U3MZ7Z/next-to-trying-and-winning-the-best-thing-is-trying-and-failing"
+  },
+  {
+    "episode": 22,
+    "airingAt": 1751758200,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 6
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185073-m4QzzXcEqmvb.png",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx185073-m4QzzXcEqmvb.png"
+    },
+    "title": {
+      "romaji": "Kimi to Idol Precure♪",
+      "english": "You and Idol Precure ♪"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GK9UGNWNP/full-bloom-intensive-practice-hanamichi-town-festival"
+  },
+  {
+    "episode": 14,
+    "airingAt": 1751788800,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 6
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180367-GlRuB2lG7Kaa.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx180367-GlRuB2lG7Kaa.jpg"
+    },
+    "title": {
+      "romaji": "Witch Watch",
+      "english": "WITCH WATCH"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GJWUQ7EW2/kanshis-part-time-job-diaries-the-superhero-show-kanshis-part-time-job-diaries-the-side-job"
+  },
+  {
+    "episode": 1136,
+    "airingAt": 1751811360,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 6
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21-ELSYx3yMPcKM.jpg"
+    },
+    "title": {
+      "romaji": "ONE PIECE",
+      "english": "ONE PIECE"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/G8WUNGWKG/scent-of-danger-the-seventh-member-is-nico-robin"
+  },
+  {
+    "episode": 2,
+    "airingAt": 1752244200,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 11
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177175-uj13fUT8bqLD.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx177175-uj13fUT8bqLD.jpg"
+    },
+    "title": {
+      "romaji": "Arknights: Enshin Shomei",
+      "english": "Arknights: RISE FROM EMBER"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GWDU8EW3D/lullabye"
+  },
+  {
+    "episode": 1169,
+    "airingAt": 1752310800,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 12
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-MyYT7K3chBdO.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx235-MyYT7K3chBdO.jpg"
+    },
+    "title": {
+      "romaji": "Meitantei Conan",
+      "english": "Case Closed"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/case-closed/episode-1012-picking-wild-plants-and-clovers-part-two-812416"
+  },
+  {
+    "episode": 15,
+    "airingAt": 1752312360,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 12
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx184639-tmj8NbTroNeI.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx184639-tmj8NbTroNeI.jpg"
+    },
+    "title": {
+      "romaji": "Anne Shirley",
+      "english": "Anne Shirley"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GX9U3MZ7Z/next-to-trying-and-winning-the-best-thing-is-trying-and-failing"
+  },
+  {
+    "episode": 23,
+    "airingAt": 1752363000,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 13
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185073-m4QzzXcEqmvb.png",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx185073-m4QzzXcEqmvb.png"
+    },
+    "title": {
+      "romaji": "Kimi to Idol Precure♪",
+      "english": "You and Idol Precure ♪"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GK9UGNWNP/full-bloom-intensive-practice-hanamichi-town-festival"
+  },
+  {
+    "episode": 15,
+    "airingAt": 1752393600,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 13
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180367-GlRuB2lG7Kaa.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx180367-GlRuB2lG7Kaa.jpg"
+    },
+    "title": {
+      "romaji": "Witch Watch",
+      "english": "WITCH WATCH"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GJWUQ7EW2/kanshis-part-time-job-diaries-the-superhero-show-kanshis-part-time-job-diaries-the-side-job"
+  },
+  {
+    "episode": 1137,
+    "airingAt": 1752416160,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 13
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21-ELSYx3yMPcKM.jpg"
+    },
+    "title": {
+      "romaji": "ONE PIECE",
+      "english": "ONE PIECE"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/G8WUNGWKG/scent-of-danger-the-seventh-member-is-nico-robin"
+  },
+  {
+    "episode": 3,
+    "airingAt": 1752849000,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 18
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177175-uj13fUT8bqLD.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx177175-uj13fUT8bqLD.jpg"
+    },
+    "title": {
+      "romaji": "Arknights: Enshin Shomei",
+      "english": "Arknights: RISE FROM EMBER"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GWDU8EW3D/lullabye"
+  },
+  {
+    "episode": 1170,
+    "airingAt": 1752915600,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 19
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-MyYT7K3chBdO.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx235-MyYT7K3chBdO.jpg"
+    },
+    "title": {
+      "romaji": "Meitantei Conan",
+      "english": "Case Closed"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/case-closed/episode-1012-picking-wild-plants-and-clovers-part-two-812416"
+  },
+  {
+    "episode": 16,
+    "airingAt": 1752917160,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 19
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx184639-tmj8NbTroNeI.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx184639-tmj8NbTroNeI.jpg"
+    },
+    "title": {
+      "romaji": "Anne Shirley",
+      "english": "Anne Shirley"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GX9U3MZ7Z/next-to-trying-and-winning-the-best-thing-is-trying-and-failing"
+  },
+  {
+    "episode": 1,
+    "airingAt": 1752933600,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 19
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx178754-xQEHrJS6sKAA.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx178754-xQEHrJS6sKAA.jpg"
+    },
+    "title": {
+      "romaji": "Kaijuu 8-gou 2nd Season",
+      "english": "Kaiju No. 8 Season 2"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GK9UGV7KD/kafka-hibino"
+  },
+  {
+    "episode": 24,
+    "airingAt": 1752967800,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 20
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185073-m4QzzXcEqmvb.png",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx185073-m4QzzXcEqmvb.png"
+    },
+    "title": {
+      "romaji": "Kimi to Idol Precure♪",
+      "english": "You and Idol Precure ♪"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GK9UGNWNP/full-bloom-intensive-practice-hanamichi-town-festival"
+  },
+  {
+    "episode": 16,
+    "airingAt": 1752998400,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 20
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180367-GlRuB2lG7Kaa.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx180367-GlRuB2lG7Kaa.jpg"
+    },
+    "title": {
+      "romaji": "Witch Watch",
+      "english": "WITCH WATCH"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GJWUQ7EW2/kanshis-part-time-job-diaries-the-superhero-show-kanshis-part-time-job-diaries-the-side-job"
+  },
+  {
+    "episode": 1138,
+    "airingAt": 1753020960,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 20
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21-ELSYx3yMPcKM.jpg"
+    },
+    "title": {
+      "romaji": "ONE PIECE",
+      "english": "ONE PIECE"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/G8WUNGWKG/scent-of-danger-the-seventh-member-is-nico-robin"
+  },
+  {
+    "episode": 4,
+    "airingAt": 1753453800,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 25
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177175-uj13fUT8bqLD.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx177175-uj13fUT8bqLD.jpg"
+    },
+    "title": {
+      "romaji": "Arknights: Enshin Shomei",
+      "english": "Arknights: RISE FROM EMBER"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GWDU8EW3D/lullabye"
+  },
+  {
+    "episode": 1171,
+    "airingAt": 1753520400,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 26
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-MyYT7K3chBdO.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx235-MyYT7K3chBdO.jpg"
+    },
+    "title": {
+      "romaji": "Meitantei Conan",
+      "english": "Case Closed"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/case-closed/episode-1012-picking-wild-plants-and-clovers-part-two-812416"
+  },
+  {
+    "episode": 17,
+    "airingAt": 1753521960,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 26
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx184639-tmj8NbTroNeI.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx184639-tmj8NbTroNeI.jpg"
+    },
+    "title": {
+      "romaji": "Anne Shirley",
+      "english": "Anne Shirley"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GX9U3MZ7Z/next-to-trying-and-winning-the-best-thing-is-trying-and-failing"
+  },
+  {
+    "episode": 2,
+    "airingAt": 1753538400,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 26
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx178754-xQEHrJS6sKAA.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx178754-xQEHrJS6sKAA.jpg"
+    },
+    "title": {
+      "romaji": "Kaijuu 8-gou 2nd Season",
+      "english": "Kaiju No. 8 Season 2"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GK9UGV7KD/kafka-hibino"
+  },
+  {
+    "episode": 25,
+    "airingAt": 1753572600,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 27
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185073-m4QzzXcEqmvb.png",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx185073-m4QzzXcEqmvb.png"
+    },
+    "title": {
+      "romaji": "Kimi to Idol Precure♪",
+      "english": "You and Idol Precure ♪"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GK9UGNWNP/full-bloom-intensive-practice-hanamichi-town-festival"
+  },
+  {
+    "episode": 17,
+    "airingAt": 1753603200,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 27
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180367-GlRuB2lG7Kaa.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx180367-GlRuB2lG7Kaa.jpg"
+    },
+    "title": {
+      "romaji": "Witch Watch",
+      "english": "WITCH WATCH"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/GJWUQ7EW2/kanshis-part-time-job-diaries-the-superhero-show-kanshis-part-time-job-diaries-the-side-job"
+  },
+  {
+    "episode": 1139,
+    "airingAt": 1753625760,
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 27
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx21-ELSYx3yMPcKM.jpg"
+    },
+    "title": {
+      "romaji": "ONE PIECE",
+      "english": "ONE PIECE"
+    },
+    "streamSite": "Crunchyroll",
+    "streamUrl": "http://www.crunchyroll.com/watch/G8WUNGWKG/scent-of-danger-the-seventh-member-is-nico-robin"
+  }
+]

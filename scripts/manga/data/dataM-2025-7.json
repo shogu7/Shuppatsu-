@@ -1,0 +1,22 @@
+[
+  {
+    "id": 190924,
+    "countryOfOrigin": "JP",
+    "format": "MANGA",
+    "title": {
+      "romaji": "Suterareta Enzai Reisoku, Uruwashiki Hanpou Oujo no Hirowareru.",
+      "english": null,
+      "native": "捨てられた冤罪令息、麗しき奔放皇女に拾われる。"
+    },
+    "startDate": {
+      "year": 2025,
+      "month": 7,
+      "day": 17
+    },
+    "coverImage": {
+      "large": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx190924-8lDSUT1Nn0mi.png",
+      "medium": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/small/bx190924-8lDSUT1Nn0mi.png"
+    },
+    "siteUrl": "https://anilist.co/manga/190924"
+  }
+]

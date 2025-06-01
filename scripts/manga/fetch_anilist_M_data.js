@@ -1,11 +1,11 @@
 const fs = require('fs');
 const axios = require('axios');
-const { enqueueRequest } = require('../../utils/ratelimiter');
+const { enqueueRequest } = require('../../utils/helpers/ratelimiter');
 const path = require('path');
 
 const currentDate = new Date();
 let currentYear = currentDate.getFullYear();
-let currentMonth = currentDate.getMonth() + 1; // +1 each month
+let currentMonth = currentDate.getMonth() + 2; // +1 each month
 if (currentMonth > 12) {
   currentMonth = 1;
   currentYear++;
