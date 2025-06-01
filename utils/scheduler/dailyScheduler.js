@@ -5,7 +5,7 @@ const { sendDailyRelease } = require('./sendDailyRelease');
  * @param {Client} client
  */
 function scheduleDailyMessages(client) {
-  cron.schedule('35 10 * * *', async () => {
+  cron.schedule('00 10 * * *', { timezone: 'Europe/Paris' }, async () => { //*Add timeZone for better implement on other system than EU
     try {
       const channel = await client.channels.fetch(process.env.CHANNEL_ID_DAILY);
       if (!channel) {
