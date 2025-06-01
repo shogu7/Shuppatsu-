@@ -7,8 +7,8 @@ const { getForDate } = require('../helpers/getReleaseData');
  * @param {TextChannel} channel
  * @param {string} [date]
  */
-async function sendDailyRelease(channel, date = null) {
-  const targetDate = date || new Date().toISOString().split('T')[0];
+async function sendDailyRelease(channel) {
+  const targetDate = new Date().toISOString().split('T')[0];
 
   try {
     const animeList  = await getForDate(targetDate, 'anime');

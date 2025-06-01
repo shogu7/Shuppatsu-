@@ -3,7 +3,8 @@ const { createInitialButtons } = require('../components/buttons');
 const { sendWithExpiry } = require('../utils/sendWithExpiry');
 
 module.exports = {
-  name: 'r',
+  name: 'release',
+  aliases: ['r', 'manga', 'anime', 'manwha'],
   description: 'Affiche les différent boutons de redirection sur les pages d\'oeuvres',
   execute: async (message) => {
     const embeds = createHomeEmbeds();
