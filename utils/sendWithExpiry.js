@@ -1,5 +1,5 @@
 const { ActionRowBuilder, EmbedBuilder } = require('discord.js');
-const { expiredEmbeds } = require('../components/basicEmbeds/error/expiredEmbeds');
+const { expiredEmbeds } = require('../components/embeds/basic/error/expiredEmbeds');
 const { addActiveEmbed } = require('./cache/embedCache');
 
 async function sendWithExpiry(channel, embeds, rows, timeout = 90_000, userId = null) {

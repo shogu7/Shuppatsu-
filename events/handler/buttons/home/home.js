@@ -1,5 +1,5 @@
-const { createReleaseButtons } = require('../../../../components/buttons');
-const { createHomeEmbeds } = require('../../../../components/basicEmbeds/home/homeEmbeds');
+const { createReleaseButtons } = require('../../../../components/buttons/releaseButtons');
+const { createHomeEmbeds } = require('../../../../components/embeds/basic/home/homeEmbeds');
 
 async function homeInteger(interaction) {
 

@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_ERROR } = require('../../../config');
+const { GIF_ERROR } = require('../../../../config');
 
 function errorEmbeds() {
   return new EmbedBuilder()

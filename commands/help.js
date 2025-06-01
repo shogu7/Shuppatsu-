@@ -1,5 +1,4 @@
-const { createHelpEmbeds } = require('../components/basicEmbeds/help/helpEmbeds');
-const { aliases } = require('./daily');
+const { createHelpEmbeds } = require('../components/embeds/basic/help/helpEmbeds');
 
 module.exports = {
   name: 'help',

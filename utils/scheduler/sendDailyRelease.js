@@ -1,6 +1,6 @@
-const { DailyAnimeEmbed } = require('../../components/dailyEmbeds/todayAnime');
-const { DailyMangaEmbed } = require('../../components/dailyEmbeds/todayManga');
-const { DailyManwhaEmbed } = require('../../components/dailyEmbeds/todayManwha');
+const { DailyAnimeEmbed } = require('../../components/embeds/daily/todayAnime');
+const { DailyMangaEmbed } = require('../../components/embeds/daily/todayManga');
+const { DailyManwhaEmbed } = require('../../components/embeds/daily/todayManwha');
 const { getForDate } = require('../helpers/getReleaseData');
 
 /**

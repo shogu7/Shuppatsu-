@@ -2,11 +2,11 @@ const { getForDate } = require('../../../utils/helpers/getReleaseData');
 const { getCounts } = require('../../../utils/helpers/getCounts');
 const { getReleaseCountsForWindow } = require('../../../utils/helpers/mangaUtils');
 const { createDateSelectMenu } = require('../../../components/dropdown/dropdown');
-const { createMangaEmbeds } = require('../../../components/release/manga/mangaEmbeds');
-const { createAnimeEmbeds } = require('../../../components/release/anime/animeEmbeds');
-const { createManwhaEmbeds } = require('../../../components/release/manwha/manwhaEmbeds');
-const { createNavigationButtons } = require('../../../components/buttons');
-const { errorEmbeds } = require('../../../components/basicEmbeds/error/errorEmbeds');
+const { createMangaEmbeds } = require('../../../components/embeds/release/manga/mangaEmbeds');
+const { createAnimeEmbeds } = require('../../../components/embeds/release/anime/animeEmbeds');
+const { createManwhaEmbeds } = require('../../../components/embeds/release/manwha/manwhaEmbeds');
+const { createNavigationButtons } = require('../../../components/buttons/navigationButtons');
+const { errorEmbeds } = require('../../../components/embeds/basic/error/errorEmbeds');
 
 module.exports = async function showRelease(interaction, dateStr, type) {
     // console.log('type avant getforDate', type);

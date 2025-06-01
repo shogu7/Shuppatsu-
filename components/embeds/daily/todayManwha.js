@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_NO_RESULT_SCHEDULE_W } = require('../../config');
+const { GIF_NO_RESULT_SCHEDULE_W } = require('../../../config');
 
 function DailyManwhaEmbed(manwha, date) {
   const dateObj = new Date(date);

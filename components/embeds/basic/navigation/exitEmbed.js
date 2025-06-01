@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_EXIT } = require('../../../config');
+const { GIF_EXIT } = require('../../../../config');
 
 function createExitEmbeds() {
   const embed = new EmbedBuilder()

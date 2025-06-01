@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_SHUTDOWN } = require('../../../config');
+const { GIF_SHUTDOWN } = require('../../../../config');
 
 function shutdownEmbeds() {
   return [

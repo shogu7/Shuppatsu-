@@ -26,28 +26,6 @@ function createNavigationButtons(date, type, currentIndex = 0, totalMangas = 0) 
   return new ActionRowBuilder().addComponents(prevButton, exitButton, nextButton, backButton);
 }
 
-function createReleaseButtons() {
-  return new ActionRowBuilder().addComponents(
-    new ButtonBuilder()
-      .setCustomId('manga_release')
-      .setLabel('Manga Release')
-      .setStyle(ButtonStyle.Success),
-    new ButtonBuilder()
-      .setCustomId('anime_release')
-      .setLabel('Anime Release')
-      .setStyle(ButtonStyle.Success),
-    new ButtonBuilder()
-      .setCustomId('manwha_release')
-      .setLabel('Manwha Release')
-      .setStyle(ButtonStyle.Success),
-    new ButtonBuilder()
-      .setCustomId('exit')
-      .setLabel('Exit')
-      .setStyle(ButtonStyle.Danger)
-  );
-}
-
 module.exports = {
-  createNavigationButtons,
-  createReleaseButtons,
+  createNavigationButtons
 };

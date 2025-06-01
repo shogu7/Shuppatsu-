@@ -2,10 +2,10 @@ const { getForDate } = require('../../../../utils/helpers/getReleaseData');
 const { getCounts } = require('../../../../utils/helpers/getCounts');
 const { getReleaseCountsForWindow } = require('../../../../utils/helpers/mangaUtils');
 const { createDateSelectMenu } = require('../../../../components/dropdown/dropdown');
-const { createMangaEmbeds } = require('../../../../components/release/manga/mangaEmbeds');
-const { createAnimeEmbeds } = require('../../../../components/release/anime/animeEmbeds');
-const { createManwhaEmbeds } = require('../../../../components/release/manwha/manwhaEmbeds');
-const { createNavigationButtons } = require('../../../../components/buttons');
+const { createMangaEmbeds } = require('../../../../components/embeds/release/manga/mangaEmbeds');
+const { createAnimeEmbeds } = require('../../../../components/embeds/release/anime/animeEmbeds');
+const { createManwhaEmbeds } = require('../../../../components/embeds/release/manwha/manwhaEmbeds');
+const { createNavigationButtons } = require('../../../../components/buttons/navigationButtons');
 
 async function handleNextPage(interaction, type) {
   await handlePageChange(interaction, 'next', type);

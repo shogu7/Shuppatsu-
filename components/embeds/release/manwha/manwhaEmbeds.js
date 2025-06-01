@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_NO_RESULT_W } = require('../../../config');
+const { GIF_NO_RESULT_W } = require('../../../../config');
 
 function createManwhaEmbeds(manwhas, date) {
   const dateObj = new Date(date);

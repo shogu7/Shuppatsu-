@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_EXPIRED } = require('../../../config');
+const { GIF_EXPIRED } = require('../../../../config');
 
 function expiredEmbeds() {
   return [

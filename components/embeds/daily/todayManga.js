@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { GIF_NO_RESULT_SCHEDULE_M } = require('../../config');
+const { GIF_NO_RESULT_SCHEDULE_M } = require('../../../config');
 
 function DailyMangaEmbed(manga, date) {
   const dateObj = new Date(date);

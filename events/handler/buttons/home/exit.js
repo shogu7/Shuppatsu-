@@ -1,4 +1,4 @@
-const { createExitEmbeds } = require('../../../../components/basicEmbeds/navigation/exitEmbed');
+const { createExitEmbeds } = require('../../../../components/embeds/basic/navigation/exitEmbed');
 
 async function exitInteger(interaction) {
 

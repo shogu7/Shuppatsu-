@@ -1,5 +1,5 @@
-const { createHomeEmbeds } = require('../components/basicEmbeds/home/homeEmbeds');
-const { createReleaseButtons } = require('../components/buttons');
+const { createHomeEmbeds } = require('../components/embeds/basic/home/homeEmbeds');
+const { createReleaseButtons } = require('../components/buttons/releaseButtons');
 const { sendWithExpiry } = require('../utils/sendWithExpiry');
 
 module.exports = {
