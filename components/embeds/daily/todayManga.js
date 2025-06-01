@@ -12,22 +12,22 @@ function DailyMangaEmbed(manga, date) {
   if (manga.length === 0) {
     return new EmbedBuilder()
       .setColor('#1ABC9C')
-      .setTitle(`Sorties de Manga du ${formattedDate}`)
-      .setDescription("Aucun manga ajourd'hui T-T")
+      .setTitle(`Manga Releases for ${formattedDate}`)
+      .setDescription("No manga releases today T-T")
       .setImage(GIF_NO_RESULT_SCHEDULE_M)
       .setTimestamp();
   }
 
   const description = manga.map((manga, index) => {
-    const rawTitle = manga.title?.english || manga.title?.romaji || manga.title?.native || "Titre inconnu";
+    const rawTitle = manga.title?.english || manga.title?.romaji || manga.title?.native || "Unknow title";
     const title = rawTitle.length > 70 ? rawTitle.substring(0, 70) + '…' : rawTitle;
     const episode = manga.episode || '?';
-    return `**${index + 1}. [${title}](${manga.streamUrl || '#'})** - Épisode : ${episode}`;
+    return `**${index + 1}. [${title}](${manga.streamUrl || '#'})** - Episode : ${episode}`;
   }).join('\n');
 
   return new EmbedBuilder()
     .setColor('#1ABC9C')
-    .setTitle(`Sorties de Manga du jour ! ${formattedDate}`)
+    .setTitle(`Today's Manga Releases! ${formattedDate}`)
     .setDescription(description)
     .setTimestamp();
 }

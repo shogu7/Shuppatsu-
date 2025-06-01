@@ -16,7 +16,7 @@ const client = new Client({
 
 //?#region: Client interaction + connection
 client.once('ready', () => {
-  console.log(`✅ Connecté en tant que ${client.user.tag}`);
+  console.log(`✅ Connected as ${client.user.tag}`);
   scheduleDailyMessages(client);
 });
 

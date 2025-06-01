@@ -14,7 +14,7 @@ module.exports = async function showRelease(interaction, dateStr, type) {
     // console.log('from showRelease.js -->', data, '/', dateStr, '/', type);
     const counts = await getCounts(dateStr, type);
     if (data === null || counts === null) {
-        return interaction.editReply({ embeds: errorEmbeds('Type invalide') });
+        return interaction.editReply({ embeds: errorEmbeds('Invalid type') });
     }
 
     const countByDate = getReleaseCountsForWindow(counts, dateStr);

@@ -5,7 +5,7 @@ function createHomeEmbeds() {
   const embed = new EmbedBuilder()
     .setColor('#74B9FF')
     .setTitle('Shuppatsu! ;~;')
-    .setDescription('Utilisez les boutons ci-dessous pour naviguer.')
+    .setDescription('Use the buttons below to navigate.')
     .setImage(GIF_START);
 
   return [embed];

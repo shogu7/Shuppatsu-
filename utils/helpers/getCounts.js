@@ -33,7 +33,7 @@ async function getCounts(centerDate, type) {
     const dataPath = path.join(__dirname, '..', '..',  'scripts', dataType, 'data', `data${typeIndince}-${year}-${month}.json`);
 
     if (!fs.existsSync(dataPath)) {
-      console.warn(`Fichier JSON introuvable : ${dataPath}`);
+      console.warn(`JSON file not found: ${dataPath}`);
       return [];
     }
 
@@ -57,7 +57,7 @@ async function getCounts(centerDate, type) {
 
     return filteredData;
   } catch (err) {
-    console.error('Erreur lors de la lecture JSON ou du filtrage :', err);
+    console.error('Error reading or filtering JSON:', err);
     return [];
   }
 }

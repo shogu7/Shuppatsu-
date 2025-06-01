@@ -12,8 +12,8 @@ function createManwhaEmbeds(manwhas, date) {
   if (manwhas.length === 0) {
     const noResultEmbed = new EmbedBuilder()
       .setColor('#FFD580')
-      .setTitle(`📚 Sorties Manhwa du ${formattedDate}`)
-      .setDescription("Aucun manhwa trouvé pour cette date.")
+      .setTitle(`📚 Manhwa Releases on ${formattedDate}`)
+      .setDescription("No manhwa found for this date.")
       .setImage(GIF_NO_RESULT_W)
       .setTimestamp();
 
@@ -21,9 +21,9 @@ function createManwhaEmbeds(manwhas, date) {
   }
 
   return manwhas.map((manwha, index) => {
-    const rawTitle = manwha.title?.english || manwha.title?.native || manwha.title?.romaji || "Titre inconnu";
+    const rawTitle = manwha.title?.english || manwha.title?.native || manwha.title?.romaji || "Unknow title";
     const title = rawTitle.length > 80 ? rawTitle.substring(0, 80) + '…' : rawTitle;
-    const chapter = manwha.chapter || "Inconnu";
+    const chapter = manwha.chapter || "Not found";
 
     return new EmbedBuilder()
       .setColor('#FFD580')
@@ -31,7 +31,7 @@ function createManwhaEmbeds(manwhas, date) {
       .setDescription(`**Chapitre :** ${chapter}`)
       .setURL(manwha.siteUrl)
       .setImage(manwha.coverImage?.large || manwha.coverImage?.medium || null)
-      .setFooter({ text: `📅 Sortie du ${formattedDate}` })
+      .setFooter({ text: `📅 Release Date: ${formattedDate}` })
       .setTimestamp();
   });
 }

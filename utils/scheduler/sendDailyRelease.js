@@ -23,9 +23,9 @@ async function sendDailyRelease(channel) {
       embeds: [animeEmbed, mangaEmbed, manwhaEmbed]
     });
 
-    console.log(`[sendDailyRelease] ✅ Sorties envoyées pour la date ${new Date().toLocaleString()}`);
+    console.log(`[sendDailyRelease] ✅ Releases sent for date ${new Date().toLocaleString()}`);
   } catch (error) {
-    console.error('[sendDailyRelease] ❌ Erreur lors de la récupération ou de l’envoi :', error);
+    console.error('[sendDailyRelease] ❌ Error during fetch or send:', error);
     throw error;
   }
 }

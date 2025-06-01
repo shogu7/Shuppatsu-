@@ -8,23 +8,23 @@ function createHelpEmbeds() {
 
   const embed = new EmbedBuilder()
     .setColor('#2C3E50')
-    .setTitle('📝  Liste des commandes disponibles :');
+    .setTitle('📝 List of available commands:')
 
   let descriptionText = '';
 
     for (const file of commandFiles) {
         const command = require(path.join(commandsPath, file));
-        const name = command.name ? `\`${command.name}\`` : '`Commande inconnue`';
-        const description = command.description || 'Pas de description disponible.';
-        const aliases = command.aliases?.length ? `Alias : ${command.aliases.join(', ')}` : 'Pas d\'alias';
+        const name = command.name ? `\`${command.name}\`` : '`Unknown command`';
+        const description = command.description || 'No description available.';
+        const aliases = command.aliases?.length ? `Aliases : ${command.aliases.join(', ')}` : 'No \'aliases';
 
-        descriptionText += `**${name}**\n**Description :** *${description}*\n**${aliases}**\n\n`;
+        descriptionText += `**${name}**\n**Description  :** *${description}*\n**${aliases}**\n\n`;
     }
 
 
 
   embed.setDescription(descriptionText.trim())
-       .setFooter({ text: '📅 Liste des commandes disponibles' })
+       .setFooter({ text: '📅 List of available commands' })
        .setTimestamp();
 
   return [embed]

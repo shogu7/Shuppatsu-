@@ -11,17 +11,17 @@ function scheduleDailyMessages(client) {
       try {
         const channel = await client.channels.fetch(process.env.CHANNEL_ID_DAILY);
         if (!channel) {
-          console.error('[scheduleDailyMessages] Channel non trouvé pour envoi quotidien');
+          console.error('[scheduleDailyMessages] Channel not found for daily sending');
           return;
         }
 
         await sendDailyRelease(channel);
       } catch (error) {
-        console.error('[scheduleDailyMessages] ❌ Erreur lors du cron quotidien :', error);
+        console.error('[scheduleDailyMessages] ❌ Error during daily cron job:', error);
       }
     },
     {
-      timezone: 'Europe/Paris'
+      timezone: 'Europe/Paris' //*adapt your own time zone
     }
   );
 }

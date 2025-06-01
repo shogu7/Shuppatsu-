@@ -4,15 +4,15 @@ function createReleaseButtons() {
   return new ActionRowBuilder().addComponents(
     new ButtonBuilder()
       .setCustomId('manga_release')
-      .setLabel('Manga Release')
+      .setLabel('Manga')
       .setStyle(ButtonStyle.Success),
     new ButtonBuilder()
       .setCustomId('anime_release')
-      .setLabel('Anime Release')
+      .setLabel('Anime')
       .setStyle(ButtonStyle.Success),
     new ButtonBuilder()
       .setCustomId('manwha_release')
-      .setLabel('Manwha Release')
+      .setLabel('Manwha')
       .setStyle(ButtonStyle.Success),
     new ButtonBuilder()
       .setCustomId('exit')

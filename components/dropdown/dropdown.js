@@ -31,8 +31,8 @@ function createDateSelectMenu(centerDateStr, counts = {}, type) {
 
     const label =
       count > 0
-        ? `${formattedDate} - ${count} Sortie${count > 1 ? 's' : ''}`
-        : `${formattedDate} - Aucune sortie`;
+        ? `${formattedDate} - ${count} Release${count > 1 ? 's' : ''}`
+        : `${formattedDate} - No releases`;
 
     options.push({
       label,
@@ -44,7 +44,7 @@ function createDateSelectMenu(centerDateStr, counts = {}, type) {
   return new ActionRowBuilder().addComponents(
     new StringSelectMenuBuilder()
       .setCustomId(`date_select_${type}`)
-      .setPlaceholder('Sélectionner une date')
+      .setPlaceholder('Select a date')
       .addOptions(options)
   );
 }

@@ -12,8 +12,8 @@ function createAnimeEmbeds(animes, date) {
   if (animes.length === 0) {
     const noResultEmbed = new EmbedBuilder()
       .setColor('#9B59B6')
-      .setTitle(`🎬 Sorties d'Anime du ${formattedDate}`)
-      .setDescription("Aucun anime trouvé pour cette date.")
+      .setTitle(`🎬 Anime Releases for ${formattedDate}`)
+      .setDescription("No anime found for this date.")
       .setImage(GIF_NO_RESULT_A)
       .setTimestamp();
 
@@ -21,17 +21,17 @@ function createAnimeEmbeds(animes, date) {
   }
 
   return animes.map((anime, index) => {
-    const rawTitle = anime.title?.english || anime.title?.romaji || anime.title?.native || "Titre inconnu";
+    const rawTitle = anime.title?.english || anime.title?.romaji || anime.title?.native || "Unknow title";
     const title = rawTitle.length > 200 ? rawTitle.substring(0, 200) + '…' : rawTitle;
-    const episode = anime.episode;
+    const episode = anime.episode || "Not found";
 
     return new EmbedBuilder()
       .setColor('#9B59B6')
       .setTitle(`${index + 1}. ${title}`)
-      .setDescription(`**Épisode :** ${episode}`)
+      .setDescription(`**Episode :** ${episode}`)
       .setURL(anime.streamUrl)
       .setImage(anime.coverImage?.large || anime.coverImage?.medium || null)
-      .setFooter({ text: `📅 Sortie du ${formattedDate}` })
+      .setFooter({ text: `📅 Release Date: ${formattedDate}` })
       .setTimestamp();
   });
 }

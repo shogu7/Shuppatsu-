@@ -12,22 +12,22 @@ function DailyManwhaEmbed(manwha, date) {
   if (manwha.length === 0) {
     return new EmbedBuilder()
       .setColor('#FFD580')
-      .setTitle(`Sorties de Manwha du jour! ${formattedDate}`)
-      .setDescription("Aucun manwha ajourd'hui snif snif...")
+      .setTitle(`Manwha Releases for Today! ${formattedDate}`)
+      .setDescription("No manwha releases today, sniff sniff...")
       .setImage(GIF_NO_RESULT_SCHEDULE_W)
       .setTimestamp();
   }
 
   const description = manwha.map((manwha, index) => {
-    const rawTitle = manwha.title?.english || manwha.title?.romaji || manwha.title?.native || "Titre inconnu";
+    const rawTitle = manwha.title?.english || manwha.title?.romaji || manwha.title?.native || "Unknow title";
     const title = rawTitle.length > 70 ? rawTitle.substring(0, 70) + '…' : rawTitle;
     const episode = manwha.episode || '?';
-    return `**${index + 1}. [${title}](${manwha.streamUrl || '#'})** - Épisode : ${episode}`;
+    return `**${index + 1}. [${title}](${manwha.streamUrl || '#'})** - Episode : ${episode}`;
   }).join('\n');
 
   return new EmbedBuilder()
     .setColor('#FFD580')
-    .setTitle(`Sorties de manwha du jour ! ${formattedDate}`)
+    .setTitle(`Today's Manwha Releases! ${formattedDate}`)
     .setDescription(description)
     .setTimestamp();
 }

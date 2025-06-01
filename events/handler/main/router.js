@@ -28,7 +28,7 @@ async function routerHandler(message) {
     await command.execute(message, args);
   } catch (error) {
     console.error(error);
-    message.reply('Une erreur est survenue lors de l\'exécution de la commande.');
+    message.reply('An error occurred while executing the command.');
   }
 }
 

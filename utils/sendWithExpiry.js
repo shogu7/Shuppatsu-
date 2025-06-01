@@ -20,7 +20,7 @@ async function sendWithExpiry(channel, embeds, rows, timeout = 90_000, userId = 
     });
 
     const oldEmbed = sent.embeds[0];
-    const newEmbed = EmbedBuilder.from(oldEmbed).setFooter({ text: '⏱️ Session expirée.' });
+    const newEmbed = EmbedBuilder.from(oldEmbed).setFooter({ text: '⏱️ Session expired.' });
 
     await sent.edit({
       embeds: [newEmbed],

@@ -12,8 +12,8 @@ function createMangaEmbeds(mangas, date) {
   if (mangas.length === 0) {
     const noResultEmbed = new EmbedBuilder()
       .setColor('#1ABC9C')
-      .setTitle(`📚 Sorties Manga du ${formattedDate}`)
-      .setDescription("Aucun manga trouvé pour cette date.")
+      .setTitle(`📚 Manga Releases for ${formattedDate}`)
+      .setDescription("No manga found for this date.")
       .setImage(GIF_NO_RESULT_M)
       .setTimestamp();
 
@@ -21,17 +21,17 @@ function createMangaEmbeds(mangas, date) {
   }
 
   return mangas.map((manga, index) => {
-    const rawTitle = manga.title?.english || manga.title?.romaji || manga.title?.native || "Titre inconnu";
+    const rawTitle = manga.title?.english || manga.title?.romaji || manga.title?.native || "Unknow title";
     const title = rawTitle.length > 80 ? rawTitle.substring(0, 80) + '…' : rawTitle;
-    const chapter = manga.chapter || "Inconnu";
+    const chapter = manga.chapter || "Not found";
 
     return new EmbedBuilder()
       .setColor('#1ABC9C')
       .setTitle(`${index + 1}. ${title}`)
-      .setDescription(`**Chapitre :** ${chapter}`)
+      .setDescription(`**Chapter :** ${chapter}`)
       .setURL(manga.siteUrl)
       .setImage(manga.coverImage?.large || manga.coverImage?.medium || null)
-      .setFooter({ text: `📅 Sortie du ${formattedDate}` })
+      .setFooter({ text: `📅 Release Date: ${formattedDate}` })
       .setTimestamp();
   });
 }

@@ -27,14 +27,14 @@ async function getForDate(centerDate, type) {
         typeIndince = 'M';
         break;
       default:
-        console.warn(`getCounts: type inconnu « ${type} », renvoi null`);
+        console.warn(`getCounts: unknown type « ${type} », returning null`);
         return null;
     }
     const dataPath = path.join(__dirname, '..', '..', 'scripts', dataType, 'data', `data${typeIndince}-${year}-${month}.json`);
     // console.log('From aniListAPI.js -->', dataPath);
 
     if (!fs.existsSync(dataPath)) {
-      console.warn(`[getReleaseData.js]Fichier JSON introuvable : ${dataPath}`);
+      console.warn(`[getReleaseData.js] JSON file not found: ${dataPath}`);
       return [];
     }
 
@@ -57,7 +57,7 @@ async function getForDate(centerDate, type) {
     });
     return filteredData;
   } catch (err) {
-    console.error('Erreur lors de la lecture JSON ou du filtrage :', err);
+    console.error('Error reading or filtering JSON:', err);
     return [];
   }
 }

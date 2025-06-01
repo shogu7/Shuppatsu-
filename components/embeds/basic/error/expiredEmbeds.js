@@ -5,8 +5,8 @@ function expiredEmbeds() {
   return [
     new EmbedBuilder()
       .setColor('#95A5A6')
-      .setTitle('⏱️ Session expirée')
-      .setDescription('Ce menu est expiré ! Relancez la commande si nécessaire.')
+      .setTitle('⏱️ Session expired')
+      .setDescription('This menu has expired! Please run the command again if needed.')
       .setImage(GIF_EXPIRED)
   ];
 }

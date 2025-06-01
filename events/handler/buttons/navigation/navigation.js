@@ -26,7 +26,7 @@ async function handlePageChange(interaction, actionID) {
 
   const data = await getForDate(date, type);
   if (!Array.isArray(data) || data.length === 0) {
-    return interaction.update({ content: 'Aucun manga trouvé pour cette date.', components: [], embeds: [] });
+    return interaction.update({ content: 'No manga found for this date.', components: [], embeds: [] });
   }
 
   const dataInRange = await getCounts(date, type);

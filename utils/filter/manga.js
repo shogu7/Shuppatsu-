@@ -32,7 +32,7 @@ function filteredManga(centerDate, [year, month]) {
 
     return filteredMangas;
   } catch (err) {
-    console.error('Erreur lors de la lecture JSON ou du filtrage :', err);
+    console.error('Error reading JSON or filtering:', err);
     return [];
   }
 }

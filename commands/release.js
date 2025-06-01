@@ -5,7 +5,7 @@ const { sendWithExpiry } = require('../utils/sendWithExpiry');
 module.exports = {
   name: 'release',
   aliases: ['r', 'manga', 'anime', 'manwha'],
-  description: 'Affiche les différent boutons de redirection sur les pages d\'oeuvres',
+  description: 'Displays the different navigation buttons on the works pages',
   execute: async (message) => {
     const embeds = createHomeEmbeds();
     const row = createReleaseButtons();
