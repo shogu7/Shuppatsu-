@@ -12,14 +12,16 @@ function createHelpEmbeds() {
 
   let descriptionText = '';
 
-  for (const file of commandFiles) {
-    const command = require(path.join(commandsPath, file));
-    const name = command.name || 'Commande inconnue';
-    const description = command.description || 'Pas de description disponible.';
-    const aliases = command.aliases?.length ? `Alias : ${command.aliases.join(', ')}` : 'Pas d\'alias';
+    for (const file of commandFiles) {
+        const command = require(path.join(commandsPath, file));
+        const name = command.name ? `\`${command.name}\`` : '`Commande inconnue`';
+        const description = command.description || 'Pas de description disponible.';
+        const aliases = command.aliases?.length ? `Alias : ${command.aliases.join(', ')}` : 'Pas d\'alias';
 
-    descriptionText += `**${name}**\nDescription : ${description}\n${aliases}\n\n`;
-  }
+        descriptionText += `**${name}**\n**Description :** *${description}*\n**${aliases}**\n\n`;
+    }
+
+
 
   embed.setDescription(descriptionText.trim())
        .setFooter({ text: '📅 Liste des commandes disponibles' })
