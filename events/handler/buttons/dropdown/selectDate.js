@@ -1,12 +1,12 @@
-const { getForDate } = require('../../../../utils/helpers/getReleaseData');
-const { getCounts } = require('../../../../utils/helpers/getCounts');
-const { getReleaseCountsForWindow } = require('../../../../utils/helpers/mangaUtils');
+// helpers
+const { getForDate, getCounts, getReleaseCountsForWindow } = require('../../../../utils').helpers;
+// Components UI
 const { createDateSelectMenu } = require('../../../../components/dropdown/dropdown');
-const { createMangaEmbeds } = require('../../../../components/embeds/release/manga/mangaEmbeds');
-const { createAnimeEmbeds } = require('../../../../components/embeds/release/anime/animeEmbeds');
-const { createManwhaEmbeds } = require('../../../../components/embeds/release/manwha/manwhaEmbeds');
 const { createNavigationButtons } = require('../../../../components/buttons/navigationButtons');
+// Components Embeds
+const { createMangaEmbeds, createAnimeEmbeds, createManwhaEmbeds } = require('../../../../components').embeds.release;
 const { errorEmbeds } = require('../../../../components/embeds/basic/error/errorEmbeds');
+
 
 async function handleSelectDate(interaction, type) {
 //? console.log('[handleSelectDate] type -->', type);

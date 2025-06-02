@@ -1,17 +1,16 @@
-const { getForDate } = require('../../../utils/helpers/getReleaseData');
-const { getCounts } = require('../../../utils/helpers/getCounts');
-const { getReleaseCountsForWindow } = require('../../../utils/helpers/mangaUtils');
-const { createDateSelectMenu } = require('../../../components/dropdown/dropdown');
-const { createMangaEmbeds } = require('../../../components/embeds/release/manga/mangaEmbeds');
-const { createAnimeEmbeds } = require('../../../components/embeds/release/anime/animeEmbeds');
-const { createManwhaEmbeds } = require('../../../components/embeds/release/manwha/manwhaEmbeds');
-const { createNavigationButtons } = require('../../../components/buttons/navigationButtons');
+// helpers
+const { getForDate, getCounts, getReleaseCountsForWindow } = require('../../../utils').helpers;
+// Components - Embeds
+const { createAnimeEmbeds, createMangaEmbeds, createManwhaEmbeds } = require('../../../components/embeds/release');
 const { errorEmbeds } = require('../../../components/embeds/basic/error/errorEmbeds');
+// Components - UI
+const { createNavigationButtons } = require('../../../components').buttons;
+const { createDateSelectMenu } = require('../../../components').dropdown;
 
 module.exports = async function showRelease(interaction, dateStr, type) {
-    // console.log('type avant getforDate', type);
+
     const data = await getForDate(dateStr, type);
-    // console.log('from showRelease.js -->', data, '/', dateStr, '/', type);
+
     const counts = await getCounts(dateStr, type);
     if (data === null || counts === null) {
         return interaction.editReply({ embeds: errorEmbeds('Invalid type') });

@@ -1,9 +1,10 @@
 //!#region: Dead Code
-const { getForDate } = require('../../../../utils/helpers/getReleaseData');
-const { getCounts } = require('../../../../utils/helpers/getCounts'); 
-const { getReleaseCountsForWindow } = require('../../../../utils/helpers/mangaUtils');
+// helpers
+const { getForDate, getCounts, getReleaseCountsForWindow } = require('../../../../utils').helpers;
+// Components UI
 const { createDateSelectMenu } = require('../../../../components/dropdown/dropdown');
-const { createAnimeEmbeds } = require('../../../../components/release/anime/animeEmbeds');
+// Components Embeds
+const { createAnimeEmbeds } = require('../../../../components/embeds/release/anime/animeEmbeds');
 const { createNavigationButtons } = require('../../../../components/buttons');
 
 async function handleAnimeRelease(interaction) {
