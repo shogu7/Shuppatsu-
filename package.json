@@ -13,6 +13,6 @@
   },
   "scripts": {
     "test": "vitest",
-    "start": "node index.js"
+    "start": "node shuppatsu!.js"
   }
 }

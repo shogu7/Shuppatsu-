@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeAll, beforeEach, afterAll } from 'vitest';
-import { enqueueRequest } from '../utils/ratelimiter';
+import { enqueueRequest } from '../utils/helpers/ratelimiter';
 
 async function mockSuccessFunction(value) {
   return `Success: ${value}`;
