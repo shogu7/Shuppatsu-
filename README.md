@@ -32,6 +32,10 @@
 
 - **Forward-Looking:** Designed with extensibility in mind—add new features, data sources, or custom commands with ease.
 - **Embeds That Pop:** Information is delivered in rich Discord embeds, making updates easy to read and engaging.
+- **Smart Cache System for Embeds:**  
+  When a user runs a command, the bot generates an embed and stores it temporarily in cache.  
+  This cached embed is reused for a short time before expiring automatically — reducing API calls, minimizing server load, and preventing potential bugs from repeated requests.   
+- **Error Handling:** Smart error management provides clear feedback in Discord when something goes wrong — no silent failures.  
 
 ---
 
@@ -57,5 +61,17 @@
 - **CI/CD:** Every push or pull request to `main` runs all tests via GitHub Actions, ensuring code quality and reliability.
 
 ---
+## Image of the bot 
+
+![https://imgs.search.brave.com/KZblwJJGMR1yy-m1XkOuXVF6mdzhfn2cyPsNrUfnLwk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/dXNlYXN0MS5rYXB3/aW5nLmNvbS9zdGF0/aWMvNUUyLWt1cGxv/YWQud2VicA](https://i.postimg.cc/JhZ0vYPJ/Capture-d-e-cran-2025-10-15-a-11-46-48.png)
+
+![Texte alternatif](https://i.postimg.cc/fRsnKwJ3/Capture-d-e-cran-2025-10-15-a-11-47-07.png)
+
+![Texte alternatif](https://i.postimg.cc/DFDhphG4/Capture-d-e-cran-2025-10-15-a-11-48-06.png)
+
+
+
+
+
 
 > _Shuppatsu means "departure" in Japanese—never miss the departure of your favorite manga, anime, or manhwa again!_
